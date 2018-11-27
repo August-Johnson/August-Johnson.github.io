@@ -1,0 +1,13 @@
+body {
+    width: 960px;
+}
+
+
+header {
+    overflow: hidden;
+    display: inline-block;
+}
+
+.profile-image {
+    float: left; 
+}
