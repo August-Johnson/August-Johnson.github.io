@@ -30,6 +30,9 @@ h2 {
     padding-top: 15px;
 }
 
+h3 {
+}
+
 header {
     background-color: #ffffff;
     border-bottom: 3px solid #cccccc;
@@ -46,6 +49,19 @@ hr {
     background-color: #cccccc;
     width: 95%;
     margin-bottom: 20px;
+}
+
+span {
+    display: block;
+}
+
+label {
+    margin-left: 2%;
+}
+
+input {
+    width: 96%;
+    margin: 0 2%;
 }
 
 .clear {
