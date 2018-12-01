@@ -45,7 +45,7 @@ hr {
     color: #cccccc;
     background-color: #cccccc;
     width: 95%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .clear {
@@ -88,12 +88,12 @@ hr {
 .main-content {
     background-color: #ffffff;
     border: 2px solid #dddddd;
-    margin: 50px auto;
+    margin: 60px auto;
     width: 960px;
 }
 
 .about-text {
-    padding-right: 25px;
+    padding: 0 25px;
     line-height: 1.6;
 }
 
@@ -113,4 +113,5 @@ footer {
     width: 250px;
     padding-left: 25px;
     margin-right: 25px;
+    margin-top: 5px;
 }
