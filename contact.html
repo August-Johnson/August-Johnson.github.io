@@ -42,19 +42,42 @@
 
                 <hr>
 
-                <label for="fullname">Name</label>
+                <form id="contact-form">
 
-                    <span><input type="text" name="name" id="fullname" value="John Smith"></span>
+                  <div class="form-section">
+                    Name
+                  </div> 
 
-                <h3>Email</h3>
+                  <input type="text" name="fullname" value="John Smith">
 
-                    <input type="text" name="email" value="example@gmail.com">
+                  <div class="form-section">
+                    Email 
+                  </div>
 
-                <h3>Message</h3>
+                  <input type="text" name="email" value="example@gmail.com">
+                  
 
-                    <textarea name="message" rows="10" cols="30"></textarea>
+                  <div class="form-section">
+                    Message 
+                  </div>
+                    
+                  <textarea name="message" rows="10" cols="30"></textarea>
+                  
+                  <div class="submit-button">
+
+                    <button type="submit" form="contact-form" value="Submit">Submit</button>
+
+                  </div>
+
+                </form>
 
               </div>
+
+              <footer>
+
+                <p>Copyright&copy;</p>
+                
+              </footer>
 
     
 </body>
