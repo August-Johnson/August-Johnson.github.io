@@ -49,44 +49,6 @@ hr {
     margin-bottom: 25px;
 }
 
-.form-section {
-    margin-left: 2.5%;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    display: block;
-    font-weight: bold;
-}
-
-input {
-    width: 95%;
-    height: 35px;
-    padding: 5px;
-    margin: 0 2.5%;
-    display: block;
-}
-
-textarea {
-    width: 95%;
-    height: 200px;
-    margin: 0 2.5%;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.submit-button button{
-    background-color: #4aaaa5;
-    color: #ffffff;
-    border: none;
-    text-align: center;
-    font-size: 1.4em;
-    display: inline-block;
-    width: 150px;
-    height: 40px;
-    margin-left: 2.5%;
-    margin-bottom: 15px;
-    cursor: pointer;
-}
-
 .clear {
     clear: both;
 }
@@ -131,10 +93,6 @@ textarea {
     width: 960px;
 }
 
-.about-text {
-    padding: 0 25px;
-    line-height: 2;
-}
 
 footer {
     background-color: #666666;
@@ -150,6 +108,13 @@ footer p {
     color: #ffffff;
 }
 
+/* About me page specific css */
+
+.about-text {
+    padding: 0 25px;
+    line-height: 2;
+}
+
 #profile-image {
     float: left; 
     height: 220px;
@@ -158,6 +123,48 @@ footer p {
     margin-right: 25px;
     margin-top: 5px;
 }
+
+/* Contact page specific css */
+
+.form-section {
+    margin-left: 2.5%;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 95%;
+    height: 35px;
+    padding: 5px;
+    margin: 0 2.5%;
+    display: block;
+}
+
+textarea {
+    width: 95%;
+    height: 200px;
+    margin: 0 2.5%;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.submit-button button{
+    background-color: #4aaaa5;
+    color: #ffffff;
+    border: none;
+    text-align: center;
+    font-size: 1.4em;
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    margin-left: 2.5%;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* Portfolio page specific css */
 
 .my-projects {
     font-family: Georgia, 'Times New Roman', Times, serif;
