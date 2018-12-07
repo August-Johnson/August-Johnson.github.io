@@ -67,8 +67,18 @@ a:focus {
 
 .nav-pills .nav-link.active {
     background-color: #6495ed;
-    border: 2px solid #ffffff;
+    border: 4px solid #ffffff;
     font-weight: 500;
+}
+
+/* Contact form CSS */
+form input:focus,
+form textarea:focus {
+    border: 4px solid #6495ed;
+}
+
+.btn-primary:focus {
+    border: 4px solid #ffffff;
 }
 
 /* Portfolio page specific CSS */
