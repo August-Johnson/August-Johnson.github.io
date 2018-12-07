@@ -1,197 +1,99 @@
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-
+/* Universal CSS */
 body {
     color: #777777;
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url("../images/folk-pattern-black.png");
     margin: 0;
+    font-size: 18px;
+    background-image: url("../images/folk-pattern-black.png");
 }
 
 h1 {
     background-color: #4aaaa5;
     color: #ffffff;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    float: left;
-    height:97px;
+    font-family: "Georgia, 'Times New Roman', Times, serif";
+    text-align: center;
+    height: 70px;
+    padding-top: 10px;
     margin: 0;
-    padding: 30px;
 }
 
 h2 {
     color: #4aaaa5;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding-left: 25px;
-    padding-top: 15px;
-    font-size: 2em;
-}
-
-header {
-    background-color: #ffffff;
-    border-bottom: 3px solid #cccccc;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-
+    font-family: "Georgia, 'Times New Roman', Times, serif";
+    font-weight: 600;
 }
 
 hr {
-    height: 3px;
+    height: 2px;
     border: none;
     color: #cccccc;
     background-color: #cccccc;
-    width: 95%;
     margin-bottom: 25px;
 }
 
-.clear {
-    clear: both;
+img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    margin-top: 7px;
 }
-
-.top-banner {
-    width: 960px;
+header {
+    background-color: #ffffff;
+    border-bottom: 3px solid #cccccc;
     margin: 0 auto;
 }
 
-.top-nav {
-    float: right;
-    padding-top: 35px;
+.main-content {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 20px;
 }
 
-.top-nav a {
-    color: #777777;
-    font-size: 20px;
-    margin-left: 10px;
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #666666;
+    color: #ffffff;
+    border-top: 5px solid #4aaaa5;
+}
+
+/* Link styles */
+a:focus {
+    border: 4px solid #6495ed;
+}
+
+.topheader-navbar {
+    padding: 0;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #6495ed;
+    border: 4px solid #ffffff;
+    font-weight: 500;
+}
+
+/* Contact form CSS */
+form input:focus,
+form textarea:focus {
+    border: 4px solid #6495ed;
+}
+
+.btn-primary:focus {
+    border: 4px solid #ffffff;
+}
+
+/* Portfolio page specific CSS */
+.card {
+    margin-bottom: 10px;
+}
+
+.card a {
     text-decoration: none;
 }
 
-.nav-about {
-    float: left;
-    border-right: 2px solid #cccccc;
-    padding-right: 10px;
-}
-
-.nav-portfolio {
-    float: left;
-    border-right: 2px solid #cccccc;
-    padding-right: 10px;
-}
-
-.nav-contact {
-    float: left;
-}
-
-.main-content {
-    background-color: #ffffff;
-    border: 2px solid #dddddd;
-    margin: 50px auto;
-    width: 960px;
-}
-
-
-footer {
-    background-color: #666666;
-    border-top: 8px solid #4aaaa5;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-}
-
-footer p {
-    color: #ffffff;
-}
-
-/* About me page specific css */
-
-.about-text {
-    padding: 0 25px;
-    line-height: 2;
-}
-
-#profile-image {
-    float: left; 
-    height: 220px;
-    width: 250px;
-    padding-left: 25px;
-    margin-right: 25px;
-    margin-top: 5px;
-}
-
-/* Contact page specific css */
-
-.form-section {
-    margin-left: 2.5%;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    display: block;
-    font-weight: bold;
-}
-
-input {
-    width: 95%;
-    height: 35px;
-    padding: 5px;
-    margin: 0 2.5%;
-    display: block;
-}
-
-textarea {
-    width: 95%;
-    height: 200px;
-    margin: 0 2.5%;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.submit-button button{
-    background-color: #4aaaa5;
-    color: #ffffff;
-    border: none;
-    text-align: center;
-    font-size: 1.4em;
-    display: inline-block;
-    width: 150px;
-    height: 40px;
-    margin-left: 2.5%;
-    margin-bottom: 15px;
-    cursor: pointer;
-}
-
-/* Portfolio page specific css */
-
-.my-projects {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.4em;
-}
-
-img {
-    width: 260px;
-    height: 155px;
-}
-
-.project-box {
-    position: relative;
-    margin-left: 25px;
-    margin-right: 15px;
-    margin-bottom: 40px;
-    float: left;
-}
-
-.project-name {
-    position: absolute;
-    left: 0;
-    bottom: 20px;
-    width: 100%;
-    height: 25%;
+.card-text {
     text-align: center;
     background-color: #4aaaa5;
     color: #ffffff;
-    padding-top: 6px;
+    font-family: "Georgia, 'Times New Roman', Times, serif";
+    font-weight: 600;
 }
