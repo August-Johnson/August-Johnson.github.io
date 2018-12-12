@@ -1,0 +1,29 @@
+body {
+    margin: 25px;
+    background-image: url("../images/psychic-background.jpeg");
+}
+
+.container {
+    margin-top: 200px;
+    margin-left: 30px;
+    color: white;
+}
+
+
+p {
+    font-size: 150%;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 450%;
+    margin-bottom: 35px;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 270%;
+    margin-bottom: 20px;
+}
