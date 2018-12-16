@@ -1,0 +1,40 @@
+body {
+    background-image: url('../images/background-image2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #ffffff;
+    background-color: rgb(3, 42, 116);
+    padding-left: 30px;
+}
+
+h1 {
+    font-size: 300%;
+    padding-left: 50px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+.result-box {
+    display: inline-block;
+}
+
+h3 {
+    font-size: 170%;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+}
+
+#currentWord {
+    letter-spacing: 10px;
+    font-size: 200%;
+}
+
+#lettersGuessed {
+    letter-spacing: 10px;
+}
