@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <h1>Crystal Collector!</h1>
+
+    <div class="instructions-box">
+        <h2>Here are the rules:</h2>
+
+        <p>At the start of the game you'll be given a random number.</p>
+
+        <p>There are four crystals below. Each one has a point value. That value is hidden from you. When you click on a crystal, the points are revealed and are added to your score.</p>
+
+        <p>To win the game, your total score has to equal that of the random number. If your total score is higher than the random number, you lose the game.</p>
+
+        <p>Note: Every time you start a new game, the values of the crystals change.</p>
+    </div>
+
+    <p>Match your score to this number:</p>
+    <div class="number-box"></div>
+
+    <br />
+
+    <div class="game-results"></div>
+    <div class="win-loss">
+        <div>Wins: <span class="wins"></span></div>
+        <div>Losses: <span class="losses"></span></div>
+    </div>
+
+    <div class="crystals">
+        <img class ="ruby crystal-image" data-crystal-value="0" src="assets/images/ruby-crystal.png" alt="crystal">
+        <img class ="diamond crystal-image" src="assets/images/diamond-crystal.jpg" alt="crystal">
+        <img class ="black-crystal crystal-image" src="assets/images/black-crystal.jpg" alt="crystal">
+        <img class ="orange-crystal crystal-image" src="assets/images/orange-crystal.png" alt="crystal">
+    </div>
+
+
+    <p>Your total score is:</p>
+
+    <div class="total-score"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+</body>
+
+</html>
