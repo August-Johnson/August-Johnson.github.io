@@ -1,5 +1,26 @@
+body {
+    background-image: url("../images/background-image.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+h1 {
+    font-size: 400%;
+    background-color: #cccccc;
+}
+
 img {
     width: 100px;
-    height: auto;
+    height: 90px;
     display: inline-block;
+}
+
+.number-box {
+    font-weight: 600;
+}
+
+.crystals {
+    background-color: #ffffff;
+    border: groove 8px #ffd700;
+    padding: 5px;
 }
