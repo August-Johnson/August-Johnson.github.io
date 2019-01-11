@@ -1,7 +1,9 @@
 body {
     background-image: url("../images/background-image.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 h1 {
@@ -11,8 +13,7 @@ h1 {
 
 img {
     width: 100px;
-    height: 90px;
-    display: inline-block;
+    height: auto;
 }
 
 .number-box {
@@ -24,3 +25,5 @@ img {
     border: groove 8px #ffd700;
     padding: 5px;
 }
+
+
