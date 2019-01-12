@@ -67,13 +67,14 @@ $(document).ready(function () {
     ];
 
     console.log(questions.length);
+    console.log(questions);
 
     // timer starts with 60 seconds
     var timerNumber = 60;
     var intervalId;
 
     // right and wrong answer counter variables
-    var userAnswer = "";
+    var userAnswers = [];
     var right = 0;
     var wrong = 0;
     // the quiz will have 7 questions total so it starts with 7 unanswered
@@ -119,7 +120,7 @@ $(document).ready(function () {
             for (letter in questions[i].answers) {
                 answers.push(
                     '<label>'
-                    + '<input type="radio" name="question ' + i + '" value="' + letter + '">'
+                    + '<input type="radio" name="question" value="' + letter + '">'
                     + letter + ': '
                     + questions[i].answers[letter]
                     + '</label>');
@@ -129,21 +130,26 @@ $(document).ready(function () {
             );
         }
         $('.display-screen').append(outPut);
+        $('.display-screen').append('<button type="submit">Done</button>');
     }
+        
+
+    $('label').on('click', function() {
+        alert('hi')
+    })
 
     // when user clicks start, display quiz and timer
-    // load quiz on button click
     $('.start').click(function () {
         $('.display-screen').html('<h2>Time remaining: ' + '<span class="timer">' + timerNumber + '</span>' + '</h2>');
         startTimer();
         questionLoad();
-
     });
 
-    // start timer countdown when user presses start button
+    // on click submit button
 
     // storing the users answers
-
+    
+   
     // checking and scoring users answers
 
     // right, wrong and unanswered are scored/evaluated
