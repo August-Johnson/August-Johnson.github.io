@@ -9,7 +9,7 @@
 <hr>
 <a href="https://august-johnson.github.io/week3/hangman-game/index.html"><b>Week 3</b> - JavaScript Hangman Game Homework</a> <br />
 <hr>
-<a href="https://august-johnson.github.io/week3/pyschic-game/index.html"><b>Week 3</b> - JavaScript Psychic Guessing Game Homework</a> <br />
+<a href="https://august-johnson.github.io/week3/psychic-game/index.html"><b>Week 3</b> - JavaScript Psychic Guessing Game Homework</a> <br />
 <hr>
 <a href="https://august-johnson.github.io/week4/crystal-game/index.html"><b>Week 4</b> - Jquery Crystal Game Homework</a> <br />
 <hr>
