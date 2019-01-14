@@ -1,0 +1,31 @@
+body {
+    background-image: url()
+}
+
+h1 {
+    margin-top: 15px;
+}
+
+label {
+   display: inline-block;
+   margin-right: 15px;
+}
+
+hr {
+    height: 5px;
+    color: #777777;
+    background-color: #777777;
+    border: none;
+}
+
+.timerContainer {
+    display: inline-block;
+}
+
+.alert-heading {
+    display: inline-block;
+}
+
+.revealAnswer {
+    display: inline-block;
+}

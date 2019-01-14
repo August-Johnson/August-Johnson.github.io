@@ -124,7 +124,7 @@ $(document).ready(function () {
     }
 
     function displayTimer() {
-        $('.timerArea').html('<h2>Time remaining: ' + '<span class="timer">' + timerNumber + '</span>' + '</h2>');
+        $('.timerArea').html('<h2 class="timerContainer">Time remaining: ' + '<span class="timer">' + timerNumber + '</span>' + '</h2>');
     }
 
     // restart / play again 
@@ -152,15 +152,15 @@ $(document).ready(function () {
                 + questions[i].answers[letter]
                 + '</label>');
         }
-        output.push('<div class="question">'
+        output.push('<h3 class="question">'
             + questions[i].question
-            + '</div>'
-            + '<div class="answer">'
+            + '</h3>'
+            + '<div class="answer btn-lg">'
             + answers.join('')
             + '</div>');
 
         $('.display-screen').html(output);
-        $('.display-screen').append('<button class="done" type="submit">Sumbit</button>');
+        $('.display-screen').append('<button class="done btn-primary btn-lg" type="submit">Sumbit</button>');
     }
 
     // checks if there are more questions, if so - loads next question or ends game
@@ -185,21 +185,21 @@ $(document).ready(function () {
         if (userAnswer === questions[i].correctAnswer) {
             right++;
             unAnswered--;
-            $('.display-screen').html("<h3>Correct!</h3>");
+            $('.display-screen').html('<div class="jumbotron">' + '<h3 class="display-4 alert-success alert-heading">Correct!</h3>' + '</div>');
             compareScreen();
         }
         else if (timerNumber === 0 && userAnswer === undefined) {
-            $('.display-screen').html('<h3>You ran out of time!</h3>' + '<div class="revealAnswer">The correct answer was: ' + questions[i].correctAnswerString);
+            $('.display-screen').html('<div class="jumbotron">' + '<h3 class=" display-4 alert-warning alert-heading">You ran out of time!</h3>' + '<br />' + '<div class="revealAnswer lead alert alert-info">The correct answer was: ' + questions[i].correctAnswerString + '</div>');
             compareScreen();
         }
         else if (userAnswer === undefined) {
-            $('.display-screen').html('<h3>You chose nothing!</h3>' + '<div class="revealAnswer">The correct answer was: ' + questions[i].correctAnswerString);
+            $('.display-screen').html('<div class="jumbotron">' + '<h3 class=" display-4 alert-warning alert-heading">You chose nothing!</h3>' + '<br />' + '<div class="revealAnswer lead alert alert-info">The correct answer was: ' + questions[i].correctAnswerString + '</div>');
             compareScreen();
         }
         else {
             wrong++;
             unAnswered--;
-            $('.display-screen').html('<h3>Wrong!</h3>' + '<div class="revealAnswer">The correct answer was: ' + questions[i].correctAnswerString);
+            $('.display-screen').html('<div class="jumbotron">' + '<h3 class=" display-4 alert-danger alert-heading">Wrong!</h3>' + '<br />' + '<div class="revealAnswer lead alert alert-info">The correct answer was: ' + questions[i].correctAnswerString + '</div>');
             compareScreen();
         }
     }
@@ -215,11 +215,14 @@ $(document).ready(function () {
         stopTimer();
         $('.timerArea').html('<h2>All Done!</h2>');
         $('.display-screen').html(
-            '<h3>Your Results: </h3>'
-            + '<div class="right">Correct Answers: ' + right + '</div>'
-            + '<div class="wrong">Incorrect Answers: ' + wrong + '</div>'
-            + '<div class="unAnswered">Unanswered: ' + unAnswered + '</div>'
-            + '<button class="restart">Play Again</button>'
+            '<div class="list-group col-6">'
+            + '<h3 class="list-group-item active">Your Results: </h3>'
+            + '<div class="right list-group-item">Correct Answers: ' + right + '</div>'
+            + '<div class="wrong list-group-item">Incorrect Answers: ' + wrong + '</div>'
+            + '<div class="unAnswered list-group-item">Unanswered: ' + unAnswered + '</div>'
+            + '</div>'
+            + '<br />'
+            + '<button class="restart btn-secondary btn-lg">Play Again</button>'
         );
     }
  
