@@ -124,7 +124,7 @@ $(document).ready(function () {
     }
 
     function displayTimer() {
-        $('.timerArea').html('<h2 class="timerContainer">Time remaining: ' + '<span class="timer">' + timerNumber + '</span>' + '</h2>');
+        $('.timerArea').html('<div class="card-header bg-light">' + '<h2 class="timerContainer">Time remaining: ' + '<span class="timer">' + timerNumber + '</span>' + '</h2>' + '</div>');
     }
 
     // restart / play again 
@@ -213,7 +213,7 @@ $(document).ready(function () {
     // displays results to user
     function showResults() {
         stopTimer();
-        $('.timerArea').html('<h2>All Done!</h2>');
+        $('.timerArea').html('<h2 class="card-header bg-light">All Done!</h2>');
         $('.display-screen').html(
             '<div class="list-group col-6">'
             + '<h3 class="list-group-item active">Your Results: </h3>'
@@ -225,7 +225,7 @@ $(document).ready(function () {
             + '<button class="restart btn-secondary btn-lg">Play Again</button>'
         );
     }
- 
+
     // on click events
 
     // when user clicks start, display quiz and timer
@@ -248,7 +248,7 @@ $(document).ready(function () {
     });
 
     // resets the game when user clicks play again
-    $(document).on('click', '.restart', function() {
+    $(document).on('click', '.restart', function () {
         restartQuiz();
     });
 });
