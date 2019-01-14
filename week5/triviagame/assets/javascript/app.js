@@ -97,7 +97,9 @@ var i = 0;
 
 // document ready
 $(document).ready(function () {
+
     // functions
+
     // timer start function
     function startTimer() {
         clearInterval(intervalId);
@@ -112,7 +114,7 @@ $(document).ready(function () {
         // if no answer is selected when the time runs out, it passes undefined to userAnswer
         if (timerNumber === 0) {
             userAnswer = checked;
-            nextQuestion();
+            answerCompare();
         }
     }
 
@@ -121,54 +123,22 @@ $(document).ready(function () {
         clearInterval(intervalId);
     }
 
-
     function displayTimer() {
         $('.timerArea').html('<h2>Time remaining: ' + '<span class="timer">' + timerNumber + '</span>' + '</h2>');
     }
 
-    // checks if there are more questions, if so - loads next question or ends game
-    function nextQuestion() {
-        i++;
-        if (i >= questions.length) {
-            stopTimer();
-            showResults();
-        }
-        else {
-            checked = undefined;
-            questionLoad();
-            timerNumber = 15;
-            displayTimer();
-            clearInterval(intervalId);
-            startTimer();
-        }
-    }
-
-    // shows the answerCompare for 3 seconds
-    function compareScreen() {
-        timerNumber = 3;
-        $('.timerArea').empty();
-        clearInterval();
+    // restart / play again 
+    function restartQuiz() {
+        i = 0;
+        right = 0;
+        wrong = 0;
+        unAnswered = questions.length;
+        timerNumber = 15;
+        userAnswer = undefined;
+        checked = undefined;
+        displayTimer();
         startTimer();
-    }
-
-    // displays to the user if they answered correctly
-    function answerCompare() {
-        if (userAnswer === questions[i].correctAnswer) {
-            right++;
-            unAnswered--;
-            $('.display-screen').html("<h3>Correct!</h3>");
-            compareScreen();
-        }
-        else if (userAnswer === undefined) {
-            $('.display-screen').html('<h3>You chose nothing!</h3>' + '<div class="revealAnswer">The correct answer was: ' + questions[i].correctAnswerString);
-            compareScreen();
-        }
-        else {
-            wrong++;
-            unAnswered--;
-            $('.display-screen').html('<h3>Wrong!</h3>' + '<div class="revealAnswer">The correct answer was: ' + questions[i].correctAnswerString);
-            compareScreen();
-        }
+        questionLoad();
     }
 
     // displays the quiz to user
@@ -193,18 +163,67 @@ $(document).ready(function () {
         $('.display-screen').append('<button class="done" type="submit">Sumbit</button>');
     }
 
+    // checks if there are more questions, if so - loads next question or ends game
+    function nextQuestion() {
+        i++;
+        if (i >= questions.length) {
+            stopTimer();
+            showResults();
+        }
+        else {
+            checked = undefined;
+            questionLoad();
+            timerNumber = 15;
+            displayTimer();
+            clearInterval(intervalId);
+            startTimer();
+        }
+    }
+
+    // displays to the user if they answered correctly
+    function answerCompare() {
+        if (userAnswer === questions[i].correctAnswer) {
+            right++;
+            unAnswered--;
+            $('.display-screen').html("<h3>Correct!</h3>");
+            compareScreen();
+        }
+        else if (timerNumber === 0 && userAnswer === undefined) {
+            $('.display-screen').html('<h3>You ran out of time!</h3>' + '<div class="revealAnswer">The correct answer was: ' + questions[i].correctAnswerString);
+            compareScreen();
+        }
+        else if (userAnswer === undefined) {
+            $('.display-screen').html('<h3>You chose nothing!</h3>' + '<div class="revealAnswer">The correct answer was: ' + questions[i].correctAnswerString);
+            compareScreen();
+        }
+        else {
+            wrong++;
+            unAnswered--;
+            $('.display-screen').html('<h3>Wrong!</h3>' + '<div class="revealAnswer">The correct answer was: ' + questions[i].correctAnswerString);
+            compareScreen();
+        }
+    }
+
+    // shows the answerCompare for 3 seconds
+    function compareScreen() {
+        setTimeout(nextQuestion, 3000);
+        $('.timerArea').empty();
+    }
+
     // displays results to user
     function showResults() {
-        clearInterval(intervalId);
-
+        stopTimer();
         $('.timerArea').html('<h2>All Done!</h2>');
         $('.display-screen').html(
             '<h3>Your Results: </h3>'
             + '<div class="right">Correct Answers: ' + right + '</div>'
             + '<div class="wrong">Incorrect Answers: ' + wrong + '</div>'
             + '<div class="unAnswered">Unanswered: ' + unAnswered + '</div>'
+            + '<button class="restart">Play Again</button>'
         );
     }
+ 
+    // on click events
 
     // when user clicks start, display quiz and timer
     $('.start').click(function () {
@@ -222,6 +241,11 @@ $(document).ready(function () {
     // when user clicks submit button, pass the checked value to equal userAnswer
     $(document).on('click', '.done', function () {
         userAnswer = checked;
-            answerCompare()
+        answerCompare()
+    });
+
+    // resets the game when user clicks play again
+    $(document).on('click', '.restart', function() {
+        restartQuiz();
     });
 });
