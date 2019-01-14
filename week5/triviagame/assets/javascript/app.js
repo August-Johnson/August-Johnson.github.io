@@ -7,7 +7,8 @@ var questions = [
             b: 'The Indian Ocean',
             c: 'The Pacific Ocean',
         },
-        correctAnswer: 'c'
+        correctAnswer: 'c',
+        correctAnswerString: 'The Pacific Ocean'
     },
     {
         question: "What country is larger?",
@@ -16,7 +17,8 @@ var questions = [
             b: 'Russia',
             c: 'India',
         },
-        correctAnswer: 'b'
+        correctAnswer: 'b',
+        correctAnswerString: 'Russia'
     },
     {
         question: "In what year did America become an independent country?",
@@ -25,7 +27,8 @@ var questions = [
             b: '1800',
             c: '1776',
         },
-        correctAnswer: 'c'
+        correctAnswer: 'c',
+        correctAnswerString: '1776'
     },
     {
         question: "How many years did the Roman Empire last?",
@@ -34,7 +37,8 @@ var questions = [
             b: '461',
             c: '500',
         },
-        correctAnswer: 'a'
+        correctAnswer: 'a',
+        correctAnswerString: '507'
     },
     {
         question: "Which ruler transitioned Rome from a Republic to an Empire?",
@@ -43,7 +47,8 @@ var questions = [
             b: 'Nero',
             c: 'Julius Caesar',
         },
-        correctAnswer: 'a'
+        correctAnswer: 'a',
+        correctAnswerString: 'Augustus'
     },
     {
         question: "What did the Romans NOT come up with?",
@@ -52,34 +57,40 @@ var questions = [
             b: 'The first fire-arms',
             c: 'A designated firefighting force',
         },
-        correctAnswer: 'b'
+        correctAnswer: 'b',
+        correctAnswerString: 'The First fire-arms'
     },
     {
-        question: "How many Roman Emperors were assassinated while in power?",
+        question: "What percentage of Roman Emperors were assassinated while in power?",
         answers: {
             a: '20%',
             b: '50%',
             c: '4%',
         },
-        correctAnswer: 'a'
+        correctAnswer: 'a',
+        correctAnswerString: '20%'
     }
 ];
+
+console.log(questions[0].answers["a"].valueOf());
+
+
 // timer starts with 60 seconds
-var timerNumber = 10;
+var timerNumber = 15;
 var intervalId;
 
-// var checked is defined in the global scope (I think)
+// var checked is defined in the global scope (I think) for easier management 
 var checked = undefined;
 
-// array that stores the users answers and the quiz progresses
-var userAnswers = [];
+// var that stores the users answer
+var userAnswer = undefined;
 
 // right and wrong answer counter variables
 var right = 0;
 var wrong = 0;
 
-// the quiz will have 7 questions total so it starts with 7 unanswered and will decrease with each answered question
-var unAnswered = 7;
+// setting unanswered to originally be the amount of questions in the quiz
+var unAnswered = questions.length;
 
 // var i is defined globally for easier use and reference for it
 var i = 0;
@@ -98,9 +109,9 @@ $(document).ready(function () {
         timerNumber--;
         $('.timer').html(timerNumber);
 
-        // if no answer is selected when the time runs out, it passes undefined to the userAnswers array
+        // if no answer is selected when the time runs out, it passes undefined to userAnswer
         if (timerNumber === 0) {
-            userAnswers.push(checked);
+            userAnswer = checked;
             nextQuestion();
         }
     }
@@ -110,19 +121,53 @@ $(document).ready(function () {
         clearInterval(intervalId);
     }
 
+
+    function displayTimer() {
+        $('.timerArea').html('<h2>Time remaining: ' + '<span class="timer">' + timerNumber + '</span>' + '</h2>');
+    }
+
     // checks if there are more questions, if so - loads next question or ends game
     function nextQuestion() {
         i++;
         if (i >= questions.length) {
+            stopTimer();
             showResults();
         }
         else {
             checked = undefined;
             questionLoad();
-            timerNumber = 10;
-            $('.timer').html(timerNumber);
+            timerNumber = 15;
+            displayTimer();
             clearInterval(intervalId);
             startTimer();
+        }
+    }
+
+    // shows the answerCompare for 3 seconds
+    function compareScreen() {
+        timerNumber = 3;
+        $('.timerArea').empty();
+        clearInterval();
+        startTimer();
+    }
+
+    // displays to the user if they answered correctly
+    function answerCompare() {
+        if (userAnswer === questions[i].correctAnswer) {
+            right++;
+            unAnswered--;
+            $('.display-screen').html("<h3>Correct!</h3>");
+            compareScreen();
+        }
+        else if (userAnswer === undefined) {
+            $('.display-screen').html('<h3>You chose nothing!</h3>' + '<div class="revealAnswer">The correct answer was: ' + questions[i].correctAnswerString);
+            compareScreen();
+        }
+        else {
+            wrong++;
+            unAnswered--;
+            $('.display-screen').html('<h3>Wrong!</h3>' + '<div class="revealAnswer">The correct answer was: ' + questions[i].correctAnswerString);
+            compareScreen();
         }
     }
 
@@ -152,19 +197,6 @@ $(document).ready(function () {
     function showResults() {
         clearInterval(intervalId);
 
-        for (i=0;i<userAnswers.length;i++) {
-            if (userAnswers[i] === questions[i].correctAnswer) {
-                right++;
-                unAnswered--;
-            }
-            else if (userAnswers[i] === undefined) {
-            }
-            else {
-                wrong++;
-                unAnswered--;
-            }
-        }
-
         $('.timerArea').html('<h2>All Done!</h2>');
         $('.display-screen').html(
             '<h3>Your Results: </h3>'
@@ -176,7 +208,7 @@ $(document).ready(function () {
 
     // when user clicks start, display quiz and timer
     $('.start').click(function () {
-        $('.timerArea').html('<h2>Time remaining: ' + '<span class="timer">' + timerNumber + '</span>' + '</h2>');
+        displayTimer();
         startTimer();
         questionLoad();
     });
@@ -184,19 +216,12 @@ $(document).ready(function () {
     // when user clicks an answer choice, pass its value to var checked
     $(document).on('click', 'input', function () {
         checked = $(this).val();
-        console.log($(this).val())
+        console.log($(this).val());
     });
 
-    // when user clicks submit button, pass var checked value into userAnswer array
+    // when user clicks submit button, pass the checked value to equal userAnswer
     $(document).on('click', '.done', function () {
-        userAnswers.push(checked);
-        console.log(userAnswers);
-        nextQuestion();
+        userAnswer = checked;
+            answerCompare()
     });
-
-    // checking and scoring users answers
-
-    // right, wrong and unanswered are scored/evaluated
-
-    // when user clicks done or if the time runs out display the results
 });
