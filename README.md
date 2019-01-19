@@ -15,4 +15,6 @@
 <hr>
 <a href="https://august-johnson.github.io/week5/triviagame/index.html"><b>Week 5</b> - JavaScript Timed Trivia Game Homework</a> <br />
 <hr>
+<a href="https://august-johnson.github.io/week6/GIFtastic/index.html"><b>Week 6</b> - GIPHY API Homework</a> <br />
+
 
