@@ -122,6 +122,7 @@ $(document).ready(function () {
     // when user hits one of the animal buttons, call the displayGifs function
     $(document).on('click', '.added-button', function () {
         search = $(this).val();
+        $('.gif-container').empty();
         displayGifs();
         gifNumber = 10;
         $('.more-results').html('<button class="see-more btn btn-success">Click for more!</button>');
