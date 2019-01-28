@@ -6,73 +6,81 @@ var config = {
     storageBucket: "",
     messagingSenderId: "334309145373"
 };
-
 firebase.initializeApp(config);
-
+// variables
 var database = firebase.database();
-
-// submit button on-click event
-$('#submit-train').on('click', function (event) {
-    event.preventDefault();
-
-    // setting the variables equal to the related input field values
-    var name = $('#train-name').val().trim();
-    var destination = $('#train-destination').val().trim();
-    var startTime = moment($('#train-time').val().trim(), "HH:mm A").format("hh:mm A");
-    var frequency = $('#train-frequency').val().trim();
-
-    // current time in preferred format
-    var currentTime = moment().format("hh:mm A");
-    console.log(currentTime);
-
-    // checking if any of the inputs fields are empty
+// variables stored in firebase
+var name = "";
+var destination = "";
+var startTime = "";
+var frequency = "";
+// calculated variables, not stored in firebase
+var nextArrival = "";
+var minutesAway = "";
+// function that adds the newly defined train into firebase
+function addTrain() {
+    var newTrain = {
+        name: name,
+        destination: destination,
+        startTime: startTime,
+        frequency: frequency
+    }
+    // pushing the new train object into the database
+    database.ref().push(newTrain);
+};
+// function that handles the on child added event
+function childAdded() {
+    // looking for when a child element (new train object) is added
+    database.ref().on("child_added", function (childSnapshot) {
+        // setting the variables equal to the objects related property values
+        var trainName = childSnapshot.val().name;
+        var trainDestination = childSnapshot.val().destination;
+        var trainStartTime = childSnapshot.val().startTime;
+        var trainFrequency = childSnapshot.val().frequency;
+        /* 
+        calculating the amount of time in minutes between now and the first start time, 
+        and since the last train arrived. then using those values to help calculate the minutesAway and nextArrival time 
+        */
+        var timeDiff = moment().diff(moment(trainStartTime, "hh:mm A"), "minutes");
+        var prevTrain = timeDiff % trainFrequency;
+        // calculating the minutes away and next arrival time
+        minutesAway = trainFrequency - prevTrain;
+        nextArrival = moment().add(minutesAway, "minutes").format("hh:mm A");
+        // adding the data to the table to display to users
+        $('tbody').append(
+            '<tr>'
+            + '<td>' + trainName + '</td>'
+            + '<td>' + trainDestination + '</td>'
+            + '<td>' + trainFrequency + '</td>'
+            + '<td>' + nextArrival + '</td>'
+            + '<td>' + minutesAway + '</td>'
+            + '</tr>')
+    });
+}
+/* 
+function that will re-run the childAdded function -
+therefore updating the current time and subsequently the nextArrival and minutesAway values, which will be displayed on the page
+*/
+function updateTimes() {
+    setInterval(function () {
+        $('tbody').empty();
+        childAdded();
+    }, 20 * 1000);
+}
+childAdded();
+updateTimes();
+// on submit button click, run the function
+$('#submit-train').on('click', function () {
+    name = $('#train-name').val().trim();
+    destination = $('#train-destination').val().trim();
+    startTime = moment($('#train-time').val().trim(), "HH:mm A").format("hh:mm A");
+    frequency = $('#train-frequency').val().trim();
+    // looking for any empty input field
     if (name !== "" && destination !== "" && startTime !== "" && frequency !== "") {
-
-        var newTrain = {
-            train: name,
-            place: destination,
-            firstTime: startTime,
-            frequent: frequency
-        };
-
-        // adding the new train we just passed the values to, over to firebase
-        database.ref().push(newTrain);
-
-        // clearing the input fields back to 'blank' or white-space
-        $('#train-name').val('');
-        $('#train-destination').val('');
-        $('#train-time').val('');
-        $('#train-frequency').val('');
+        addTrain();
+        childAdded();
     }
-    // if any input fields are empty, alert the user they haven't filled everything out
     else {
-        console.log("Please finish filling out the form!");
+        alert('You did not fill out the entire form!');
     }
-});
-
-// giving variables the value of the firebase objects for easier calling
-database.ref().on("child_added", function (childSnapshot) {
-    var trainName = childSnapshot.val().train;
-    var destination = childSnapshot.val().place;
-    var startTime = childSnapshot.val().firstTime;
-    var frequency = childSnapshot.val().frequent;
-
-    // time difference between now and the first train time in minutes
-    var timeDiff = moment().diff(moment(startTime, "hh:mm A"), "minutes");
-
-    // the amount of minutes that have passed since the last train arrived. 
-    var prevTrain = timeDiff % frequency;
-
-    // using that amount to calculate the minutes away and next arrival
-    var minutesAway = frequency - prevTrain;
-    var nextArrival = moment().add(minutesAway, "minutes").format("hh:mm A");
-
-    // adding it to the table on the users end
-    $('tbody').append('<tr>'
-        + '<td>' + trainName + '</td>'
-        + '<td>' + destination + '</td>'
-        + '<td>' + frequency + '</td>'
-        + '<td>' + nextArrival + '</td>'
-        + '<td>' + minutesAway + '</td>'
-        + '</tr>');
 });
