@@ -1,0 +1,18 @@
+body {
+    background-color: #cccccc;
+}
+
+.jumbotron {
+    background-color: tan;
+    color: white;
+}
+
+.jumbotron h1 {
+    font-weight: 650;
+}
+
+.jumbotron h4 {
+    font-weight: 500;
+    font-size: 200%;
+    margin-top: 10px;
+}

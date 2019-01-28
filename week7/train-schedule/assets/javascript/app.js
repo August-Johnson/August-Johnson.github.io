@@ -11,7 +11,6 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-
 // submit button on-click event
 $('#submit-train').on('click', function (event) {
     event.preventDefault();
