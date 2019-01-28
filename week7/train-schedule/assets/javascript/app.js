@@ -42,19 +42,36 @@ function childAdded() {
         and since the last train arrived. then using those values to help calculate the minutesAway and nextArrival time 
         */
         var timeDiff = moment().diff(moment(trainStartTime, "hh:mm A"), "minutes");
-        var prevTrain = timeDiff % trainFrequency;
-        // calculating the minutes away and next arrival time
-        minutesAway = trainFrequency - prevTrain;
-        nextArrival = moment().add(minutesAway, "minutes").format("hh:mm A");
-        // adding the data to the table to display to users
-        $('tbody').append(
-            '<tr>'
-            + '<td>' + trainName + '</td>'
-            + '<td>' + trainDestination + '</td>'
-            + '<td>' + trainFrequency + '</td>'
-            + '<td>' + nextArrival + '</td>'
-            + '<td>' + minutesAway + '</td>'
-            + '</tr>')
+        // if the first train time is later than it currently is
+        if (timeDiff <= -1) {
+            nextArrival = trainStartTime;
+            minutesAway = moment().diff(moment(trainStartTime, "hh:mm A"), "minutes");
+            minutesAway = minutesAway - 1;
+            minutesAway = minutesAway * -1;
+            $('tbody').append(
+                '<tr>'
+                + '<td>' + trainName + '</td>'
+                + '<td>' + trainDestination + '</td>'
+                + '<td>' + trainFrequency + '</td>'
+                + '<td>' + nextArrival + '</td>'
+                + '<td>' + minutesAway + '</td>'
+                + '</tr>')
+        }
+        else {
+            var prevTrain = timeDiff % trainFrequency;
+            // calculating the minutes away and next arrival time
+            minutesAway = trainFrequency - prevTrain;
+            nextArrival = moment().add(minutesAway, "minutes").format("hh:mm A");
+            // adding the data to the table to display to users
+            $('tbody').append(
+                '<tr>'
+                + '<td>' + trainName + '</td>'
+                + '<td>' + trainDestination + '</td>'
+                + '<td>' + trainFrequency + '</td>'
+                + '<td>' + nextArrival + '</td>'
+                + '<td>' + minutesAway + '</td>'
+                + '</tr>')
+        }
     });
 }
 /* 
