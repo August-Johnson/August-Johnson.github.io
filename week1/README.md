@@ -2,6 +2,4 @@
 
 <a href="https://august-johnson.github.io/week1/portfolio/index.html">Portfolio assignment</a>
 
-<br />
-
 <a href="https://august-johnson.github.io/week1/wireframe/index.html">Wireframe assignment</a>
