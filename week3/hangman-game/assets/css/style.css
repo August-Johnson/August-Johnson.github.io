@@ -1,9 +1,8 @@
 body {
     background-image: url('../images/background-image2.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     color: #ffffff;
-    background-color: rgb(3, 42, 116);
     padding-left: 30px;
 }
 
@@ -37,4 +36,5 @@ p {
 
 #lettersGuessed {
     letter-spacing: 10px;
+    padding-bottom: 30px;
 }
