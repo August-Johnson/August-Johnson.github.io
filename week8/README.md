@@ -1,5 +1,5 @@
 <h1>Week 8 Group Project</h1>
 
-<a href="https://sindygeb.github.io/incredible-ninjas/">First group project</a>
+<a href="https://sindygeb.github.io/incredible-ninjas/">First group project (deployed link)</a>
 
-https://github.com/sindygeb/incredible-ninjas
+<a href="https://github.com/sindygeb/incredible-ninjas">Repository link</a>
