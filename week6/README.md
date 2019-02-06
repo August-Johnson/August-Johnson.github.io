@@ -1,6 +1,6 @@
 <h1>Week 6 homework assignments</h1>
 
-<a href="https://august-johnson.github.io/week6/GIFtastic/index.html>GIPHY API</a>
+<a href="https://august-johnson.github.io/week6/GIFtastic/index.html">GIPHY API</a>
          
 <h3>Description</h3>
 
