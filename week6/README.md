@@ -1,5 +1,7 @@
-<h1>Week 6 Homework</h1>
-<h2>GIPHY API</h2>
+<h1>Week 6 homework assignments</h1>
+
+<a href="https://august-johnson.github.io/week6/GIFtastic/index.html">GIPHY API assignment</a>
+         
 <h3>Description</h3>
 
 <p>When the user hits a button, it should display 10 non-moving gifs to the screen relating to the search results. 
