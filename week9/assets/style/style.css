@@ -1,0 +1,23 @@
+img {
+    width: inherit;
+    height: auto;
+}
+
+.navbar {
+    background-color: #777777;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #666666;
+    color: #eeeeee;
+}
