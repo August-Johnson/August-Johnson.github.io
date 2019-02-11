@@ -12,79 +12,167 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top pl-5">
 
-        <div class="col-xl-9 col-lg-9 col-md-8">
-            <h1>August Johnson</h1>
-        </div>
-
-        <div class="col-xl-3 col-lg-3 col-md-4">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">ABOUT<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="portfolio.html">PORTFOLIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="resume.html">RESUME</a>
-                    </li>
-                </ul>
-            </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="portfolio.html">PORTFOLIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resume.html">RESUME</a>
+                </li>
+            </ul>
         </div>
 
     </nav>
     <!-- end of navbar -->
     <div class="container">
-
         <div class="row">
             <div class="col-12">
-                <h2>ABOUT ME</h2>
+                <h2>A<span class="small-name">UGUST</span> J<span class="small-name">OHNSON</span></h2>
                 <hr>
             </div>
         </div>
         <!-- row divide (same container) -->
-        <div class="row">
+        <div class="row about-me">
             <div class="col-xl-5 col-lg-5">
-                <img src="assets/images/profile-picture-portfolio.jpg">
+                <img id="about-pic" src="assets/images/profile-picture-portfolio.jpg">
             </div>
-            <!-- column seperation (same row) -->
+            <!-- column separation (same row) -->
             <div class="col-xl-7 col-lg-7">
                 <p>
-                    My name is August, but I mostly go by Gus. I was born in Inchon, South Korea, and was adopted as a
+                    My name is August, but I mostly go by Gus. I was born in Inchon, South Korea, and was adopted as
+                    a
                     baby and have lived in Minnesota ever since.
                 </p>
                 <p>
-                    I went to a French immersion school from kindergarten through sixth grade. That contributed to my
+                    I went to a French immersion school from kindergarten through sixth grade. That contributed to
+                    my
                     interest in foreign cultures. I was even lucky enough to visit Paris and put my language skills
                     into practice.
                 </p>
                 <p>
                     In my spare time, I mainly play video games and listen
-                    to music. I enjoy learning about history and law and keeping up with politics. My favorite animals
-                    are cats. I have a dog named Daisy and a cat named Magic. I graduated from high school in 2016 and
+                    to music. I enjoy learning about history and law and keeping up with politics. My favorite
+                    animals
+                    are cats. I have a dog named Daisy and a cat named Magic. I graduated from high school in 2016
+                    and
                     worked at Lunds & Byerlys for about a year.
                 </p>
 
                 <p>
                     Once I
                     found out about coding and by extension this boot camp, it seemed like a good fit.
-                    Before I started my class, I was able to shadow the front end accessibility development team at
+                    Before I started my class, I shadowed the front end accessibility development team at
                     U.S. Bank for an entire day. During that day I met some amazing people who taught me a lot about
-                    the important core fundamentals and how to ensure your code is accessible. I was able to absorb so
+                    the important core fundamentals and how to ensure your code is accessible. I absorbed so
                     much that day, and it fueled my desire to learn and succeed even more.
                 </p>
             </div>
         </div>
         <!-- end of container -->
     </div>
+
+    <br />
+
+    <a href="assets/images/resume.pdf" target="_blank" class="text-white">My resume</a>
+
+    <div class="about-portfolio">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>PORTFOLIO</h2>
+                    <hr>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-xl-4 col-lg-4">
+                    <div class="card text-center text-dark">
+                        <img src="assets/images/week1-screen.png" class="card-img-top"
+                            alt="thumbnail of week one assignment">
+                        <div class="card-body">
+                            <h3 class="card-title">Week One</h3>
+                            <p class="card-text">Building a Wireframe and Portfolio</p>
+                            <p class="card-text card-links">
+                                <a
+                                    href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/week1">GitHub</a>
+                                <a href="https://august-johnson.github.io/week1/portfolio/index.html">Deployed</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4">
+                    <div class="card text-center text-dark">
+                        <img src="assets/images/week2-screen.png" class="card-img-top"
+                            alt="thumbnail of week two assignment">
+                        <div class="card-body">
+                            <h3 class="card-title">Week Two</h3>
+                            <p class="card-text">Bootstrap / Media Queries</p>
+                            <p class="card-text card-links">
+                                <a
+                                    href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/week1">GitHub</a>
+                                <a href="https://august-johnson.github.io/week1/portfolio/index.html">Deployed</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4">
+                    <div class="card text-center text-dark">
+                        <img src="assets/images/week3-screen.png" class="card-img-top"
+                            alt="thumbnail of week three assignment">
+                        <div class="card-body">
+                            <h3 class="card-title">Week Three</h3>
+                            <p class="card-text">Hangman</p>
+                            <p class="card-text card-links">
+                                <a
+                                    href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/week1">GitHub</a>
+                                <a href="https://august-johnson.github.io/week1/portfolio/index.html">Deployed</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4">
+                    <div class="card text-center text-dark">
+                        <img src="assets/images/week4-screen.png" class="card-img-top"
+                            alt="thumbnail of week four assignment">
+                        <div class="card-body">
+                            <h3 class="card-title">Week Four</h3>
+                            <p class="card-text">Crystal Collector</p>
+                            <p class="card-text card-links">
+                                <a
+                                    href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/week1">GitHub</a>
+                                <a href="https://august-johnson.github.io/week1/portfolio/index.html">Deployed</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
     <!-- footer -->
-    <footer class="text-center">Footer</footer>
+    <div class="contact-info">
+        <footer>Footer</footer>
+    </div>
+
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
