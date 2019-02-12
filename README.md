@@ -19,7 +19,8 @@
 <hr>
 <a href="https://august-johnson.github.io/week7/train-schedule/index.html"><b>Week 7</b> - Firebase Train Scheduler</a> <br />
 <hr>
-<a href="https://sindygeb.github.io/incredible-ninjas/"><b>Week 8</b> - Group Project 1</a>
+<a href="https://sindygeb.github.io/incredible-ninjas/"><b>Week 8</b> - Group Project 1</a> <br />
 <hr>
+<a href="https://august-johnson.github.io/week9/index.html"><b>Week 9</b> - Portfolio Redesign</a> <br />
 
 
