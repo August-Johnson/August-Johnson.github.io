@@ -1,4 +1,4 @@
-# Week 8 Group Project
+# WEEK EIGHT GROUP PROJECT
 
 ## OVERVIEW
 <p>This was the first group project of the course. We were free to build whatever we wanted so long as it met certain requirements.<p>
