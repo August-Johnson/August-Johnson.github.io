@@ -13,7 +13,11 @@ h1 {
 h2 {
     text-align: center;
     font-size: 200%;
-    margin-top: 20px;
+    margin-top: 15px;
+}
+
+h4 {
+    font-size: 110%;
 }
 
 hr {
@@ -39,10 +43,15 @@ footer {
     font-size: 120%;
 }
 
+.border-link {
+    border: none;
+}
+
 #about-pic {
     width: 100%;
     height: auto;
-    margin-bottom: 5px;
+    margin-bottom:5px;
+    padding-bottom: 20px;
 }
 
 .small-name {
@@ -90,6 +99,11 @@ background-color: #666666;
 
 .my-info {
     margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.resume-link {
+    font-size: 130%;
 }
 /* media queries */
 @media only screen and (min-width: 576px) {
@@ -107,6 +121,14 @@ background-color: #666666;
     }
     .card img {
         height: 130px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .border-link {
+        border-left: 2px solid #aaabb8;
+        border-right: 2px solid #aaabb8;
+        margin: 0 10px;
     }
 }
 
