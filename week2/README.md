@@ -1,4 +1,10 @@
-<h1>Week 2 homework assignments</h1>
+# Week 2 homework assignments
+
+<p>This week's assignment was to recreate our portfolios from the previous assignment using Bootstrap along with media queries to make it responsive.</p>
+
+## Challenges
+* Getting used to the Bootstrap grid layout.
+* Learning how to use media queries properly.
 
 <a href="https://august-johnson.github.io/week2/Bootstrap-Portfolio/index.html">Bootstrap assignment</a>
 
