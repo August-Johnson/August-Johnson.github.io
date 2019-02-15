@@ -6,6 +6,7 @@
 * Getting used to the Bootstrap grid layout.
 * Learning how to use media queries properly.
 
+### Links to deployed assignments:
 <a href="https://august-johnson.github.io/week2/Bootstrap-Portfolio/index.html">Bootstrap assignment</a>
 
 <a href="https://august-johnson.github.io/week2/Responsive-Portfolio/index.html">Media queries assignment</a>
