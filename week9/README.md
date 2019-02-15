@@ -6,4 +6,4 @@
 * One really big challenge for me was designing it. I am admittedly not good at designing and coming up with creative designs.
 
 ### LINK TO DEPLOYED ASSIGNMENT:
-<a href=""></a>
+<a href="https://august-johnson.github.io/week9/index.html">Portfolio redesign assignment</a>
