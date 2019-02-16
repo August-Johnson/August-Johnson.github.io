@@ -1,9 +1,13 @@
 require("dotenv").config();
 var keys = require("./keys.js");
-var spotify = keys.spotify;
+// var spotify = keys.spotify;
+
 
 var axios = require("axios");
 var moment = require("moment");
+var Spotify = require('node-spotify-api');
+var spotify = new Spotify(keys.spotify);
+
 
 // action type and secondary input
 var userCommand = process.argv[2];
@@ -16,7 +20,10 @@ var secondCommand = process.argv.splice(3).join(" ");
 function getConcert() {
     var artist = secondCommand;
 
-    axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(function (response) {
+    axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(function (err, response) {
+        if (err) {
+            return console.log("ERROR OCCURED: " + err);
+        }
         for (i = 0; i < response.data.length; i++) {
             console.log("VENUE NAME: " + response.data[i].venue.name + "\n" +
                 "VENUE LOCATION: " + response.data[i].venue.city + " " + response.data[i].venue.region + "\n" +
@@ -25,6 +32,19 @@ function getConcert() {
     });
 }
 // spotify-this-song function
+function getSong() {
+    var songName = secondCommand;
+    
+    spotify.search({ type: 'track', songName, limit: 5 }, function(err, data) {
+        if (err) {
+          return console.log('ERROR OCCURED: ' + err);
+        }
+       
+      console.log(data); 
+      });
+}
+
+getSong();
 // movie-this function
 // do-what-it-says function
 
