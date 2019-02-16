@@ -24,8 +24,9 @@ function getConcert() {
         }
     });
 }
-
-
+// spotify-this-song function
+// movie-this function
+// do-what-it-says function
 
 // switch statement based on users command type
 switch (userCommand) {
@@ -52,4 +53,3 @@ switch (userCommand) {
         "3)'movie-this' + 'movie name' \n" + 
         "4)'do-what-it-says'");
 }
-
