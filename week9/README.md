@@ -1,6 +1,9 @@
-<h1>Week Nine Homework</h1>
+# WEEK NINE HOMEWORK ASSIGNMENTS
 
-<hr>
+<p>This week's assignment was to recreate our portfolios from the beginning of the class. We were required to include our Github, Linkedin and email this time.</p>
 
-<h2>Overview</h2>
-<p>The assignment was to go back and recreate your portfolio. Add in links to other projects and assignments, as well as a link to your resume.</p>
+## CHALLENGES
+* One really big challenge for me was designing it. I am admittedly not good at designing and coming up with creative designs.
+
+### LINK TO DEPLOYED ASSIGNMENT:
+<a href="https://august-johnson.github.io/week9/index.html">Portfolio redesign assignment</a>
