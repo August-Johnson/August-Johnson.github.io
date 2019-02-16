@@ -1,4 +1,4 @@
-# Class Homework Assignments / Projects
+# CODING BOOTCAMP HOMEWORK AND PROJECTS
 
 ## WEEK ONE: HTML-GIT-CSS
 <a href="https://august-johnson.github.io/week1/portfolio/index.html" target="_blank">Portfolio Homework</a>
