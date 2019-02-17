@@ -20,31 +20,29 @@ var secondCommand = process.argv.splice(3).join(" ");
 function getConcert() {
     var artist = secondCommand;
 
-    axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(function (err, response) {
-        if (err) {
-            return console.log("ERROR OCCURED: " + err);
-        }
+    axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(function (response) {
         for (i = 0; i < response.data.length; i++) {
-            console.log("VENUE NAME: " + response.data[i].venue.name + "\n" +
-                "VENUE LOCATION: " + response.data[i].venue.city + " " + response.data[i].venue.region + "\n" +
-                "DATE OF THE VENUE: " + moment(response.data[i].datetime).format("MM/DD/YYYY") + "\n-----------------------------------");
+            console.log("VENUE NAME: " + response.data[i].venue.name + 
+            "\n VENUE LOCATION: " + response.data[i].venue.city + " " + response.data[i].venue.region + 
+            "\n DATE OF THE VENUE: " + moment(response.data[i].datetime).format("MM/DD/YYYY") + "\n-----------------------------------");
         }
     });
 }
 // spotify-this-song function
 function getSong() {
     var songName = secondCommand;
-    
-    spotify.search({ type: 'track', songName, limit: 5 }, function(err, data) {
+
+    spotify.search({ type: 'track', query: songName, limit: 3 }, function (err, response) {
         if (err) {
-          return console.log('ERROR OCCURED: ' + err);
+            return console.log('Error occurred: ' + err);
         }
-       
-      console.log(data); 
-      });
+        for (i = 0; i < response.tracks.items.length; i++) {
+            console.log("\nArtist(s) name: " + response.tracks.items[i].album.artists[0].name + 
+            "\nSong name: " + response.tracks.items[i].name + "\n--------------------------------------");
+        }
+    });
 }
 
-getSong();
 // movie-this function
 // do-what-it-says function
 
@@ -55,7 +53,7 @@ switch (userCommand) {
         break;
 
     case "spotify-this-song":
-        console.log("you chose the spotify command");
+        getSong();
         break;
 
     case "movie-this":
@@ -66,10 +64,10 @@ switch (userCommand) {
         console.log("you chose the other one");
         break;
 
-        default:
-        console.log("INVALID COMMAND, PLEASE USE ONE OF THE FOLLOWING VALID INPUTS: \n" + 
-        "1)'concert-this' + 'artist name' \n" +
-        "2)'spotify-this-song' + 'song name' \n" + 
-        "3)'movie-this' + 'movie name' \n" + 
-        "4)'do-what-it-says'");
+    // default:
+    //     console.log("INVALID COMMAND, PLEASE USE ONE OF THE FOLLOWING VALID INPUTS: \n" +
+    //         "1)'concert-this' + 'artist name' \n" +
+    //         "2)'spotify-this-song' + 'song name' \n" +
+    //         "3)'movie-this' + 'movie name' \n" +
+    //         "4)'do-what-it-says'");
 }
