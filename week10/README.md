@@ -15,7 +15,7 @@
  * The venue's location
  * The date of the venue
  
- ![screenshot of concert-this command output](https://github.com/August-Johnson/August-Johnson.github.io/edit/master/week10/screen-examples/concet-screen1.png)
+ ![screenshot of concert-this command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/concert-screen1.png)
 
 #### SPOTIFY-THIS-SONG
 <p>"spotify-this-song" followed by the name or title of a song, will make a call to the Spotify API package and display a certain amount of results (I limited it to 10). If the user did not input a song name, it will default to 'The Sign' by Ace of Base. For each result, it will display:</p>
