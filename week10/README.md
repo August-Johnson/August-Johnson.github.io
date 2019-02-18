@@ -10,12 +10,14 @@
  ### COMMAND TYPES:
 #### CONCERT-THIS
 <p>"concert-this" followed by the name of a music artist or band, calls the 'bandsintown' API, and bring up a list of upcoming concerts. It will display certain info about the event, such as:</p>
+
  * The name of the venue
  * The venue's location
  * The date of the venue
 
 #### SPOTIFY-THIS-SONG
 <p>"spotify-this-song" followed by the name or title of a song, will make a call to the Spotify API package and display a certain amount of results (I limited it to 10). For each result, it will display:</p>
+
  * The name of the song
  * The artist's name 
  * The name of the album it is in
@@ -24,6 +26,7 @@
 
 #### MOVIE-THIS
 <p>"movie-this" followed by the title of a movie, will call the OMDb API and display the desired data. The user will be shown:</p>
+
   * Title of the movie.
   * Year the movie came out.
   * IMDB Rating of the movie.
