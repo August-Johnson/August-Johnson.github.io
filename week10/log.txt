@@ -23,3 +23,21 @@ movie-this hunger games
 spotify-this-song hello
 movie-this hunger games
 concert-this foo fighters
+concert-this ariana grande
+concert-this nirvana
+spotify-this-song hello
+spotify-this-song 
+movie-this war horse
+movie-this 
+do-what-it-says 
+concert-this nirvana
+concert-this foo fighters
+undefined 
+spotify-this-song hello
+spotify-this-song 
+spotify-this-song hello
+spotify-this-song 
+movie-this war horse
+movie-this 
+do-what-it-says 
+undefined 
