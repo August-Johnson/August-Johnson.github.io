@@ -10,7 +10,7 @@
  ### COMMAND TYPES:
  
 #### CONCERT-THIS
-<p>"concert-this" followed by the name of a music artist or band, calls the 'bandsintown' API, and bring up a list of upcoming concerts. It will display certain info about the event, such as:</p>
+<p>"concert-this" followed by the name of a music artist or band, calls the 'bandsintown' API, and brings up a list of upcoming concerts. It will display certain info about the event, such as:</p>
 
  * The name of the venue
  * The venue's location
@@ -41,14 +41,14 @@
 #### MOVIE-THIS
 <p>"movie-this" followed by the title of a movie, will call the OMDb API and display the desired data. If the user did not input a movie title, it will default to showing 'Mr. Nobody'. The user will be shown:</p>
 
-  * Title of the movie.
-  * Year the movie came out.
-  * IMDB Rating of the movie.
-  * Rotten Tomatoes Rating of the movie.
-  * Country where the movie was produced.
-  * Language of the movie.
-  * Plot of the movie.
-  * Actors in the movie.
+  * Title of the movie
+  * Year the movie came out
+  * IMDB Rating of the movie
+  * Rotten Tomatoes Rating of the movie
+  * Country where the movie was produced
+  * Language of the movie
+  * Plot of the movie
+  * Actors in the movie
   
   ![screenshot of movie-this command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/movie-screen1.png)
   
@@ -65,3 +65,7 @@
  ![screenshot of do-what-it-says command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/other-screen2.png)
 
 <a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/other-vid.mp4"><b>Link to video showcase</b></a>
+<hr>
+
+##### BONUS
+* Each command will append its text to the log.txt file. It will not replace any text inside log.txt, and will print itself onto a new line inside of the file.
