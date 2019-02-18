@@ -22,6 +22,7 @@
  
  <a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/concert-vid.mp4"><b>Link to video showcase</b></a>
 <hr>
+
 #### SPOTIFY-THIS-SONG
 <p>"spotify-this-song" followed by the name or title of a song, will make a call to the Spotify API package and display a certain amount of results (I limited it to 10). If the user did not input a song name, it will default to 'The Sign' by Ace of Base. For each result, it will display:</p>
 
@@ -36,6 +37,7 @@
  
  <a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/spotify-vid.mp4"><b>Link to video showcase</b></a>
 <hr>
+
 #### MOVIE-THIS
 <p>"movie-this" followed by the title of a movie, will call the OMDb API and display the desired data. If the user did not input a movie title, it will default to showing 'Mr. Nobody'. The user will be shown:</p>
 
@@ -54,6 +56,7 @@
 
 <a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/movie-vid.mp4"><b>Link to video showcase</b></a>
 <hr>
+
 #### DO-WHAT-IT-SAYS
 <p>"do-what-it-says" does not need to be followed up with a second command value. This command reads from the file 'random.txt', and inputs the text into a command. (Example: random.txt has the words 'spotify-this-song,hello' written inside of it. It will take the first half ('spotify-this-song') and input that into the command type. It will do the same for the second half of the text, except it will input it into the second command value relating to the command type (in this case, searching the spotify API).
  
