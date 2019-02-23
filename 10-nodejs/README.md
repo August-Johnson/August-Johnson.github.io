@@ -16,11 +16,11 @@
  * The venue's location
  * The date of the venue
  
- ![screenshot of concert-this command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/concert-screen1.png)
+ ![screenshot of concert-this command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/concert-screen1.png)
  
- ![screenshot of concert-this command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/concert-screen2.png)
+ ![screenshot of concert-this command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/concert-screen2.png)
  
- <a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/concert-vid.mp4"><b>Link to video showcase</b></a>
+ <a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/concert-vid.mp4"><b>Link to video showcase</b></a>
 <hr>
 
 #### SPOTIFY-THIS-SONG
@@ -31,11 +31,11 @@
  * The name of the album it is in
  * A link to a preview of the song
  
- ![screenshot of spotify-this-song command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/spotify-screen1.png)
+ ![screenshot of spotify-this-song command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/spotify-screen1.png)
  
- ![screenshot of spotify-this-song command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/spotify-screen2.png)
+ ![screenshot of spotify-this-song command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/spotify-screen2.png)
  
- <a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/spotify-vid.mp4"><b>Link to video showcase</b></a>
+ <a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/spotify-vid.mp4"><b>Link to video showcase</b></a>
 <hr>
 
 #### MOVIE-THIS
@@ -50,21 +50,21 @@
   * Plot of the movie
   * Actors in the movie
   
-  ![screenshot of movie-this command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/movie-screen1.png)
+  ![screenshot of movie-this command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/movie-screen1.png)
   
-  ![screenshot of movie-this command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/movie-screen2.png)
+  ![screenshot of movie-this command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/movie-screen2.png)
 
-<a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/movie-vid.mp4"><b>Link to video showcase</b></a>
+<a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/movie-vid.mp4"><b>Link to video showcase</b></a>
 <hr>
 
 #### DO-WHAT-IT-SAYS
 <p>"do-what-it-says" does not need to be followed up with a second command value. This command reads from the file 'random.txt', and inputs the text into a command. (Example: random.txt has the words 'spotify-this-song,hello' written inside of it. It will take the first half ('spotify-this-song') and input that into the command type. It will do the same for the second half of the text, except it will input it into the second command value relating to the command type (in this case, searching the spotify API).
  
- ![screenshot of do-what-it-says command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/other-screen1.png)
+ ![screenshot of do-what-it-says command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/other-screen1.png)
  
- ![screenshot of do-what-it-says command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/other-screen2.png)
+ ![screenshot of do-what-it-says command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/other-screen2.png)
 
-<a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/week10/screen-examples/other-vid.mp4"><b>Link to video showcase</b></a>
+<a href="https://github.com/August-Johnson/August-Johnson.github.io/blob/master/10-nodejs/screen-examples/other-vid.mp4"><b>Link to video showcase</b></a>
 <hr>
 
 ##### BONUS
