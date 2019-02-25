@@ -1,37 +1,37 @@
 # CODING BOOTCAMP HOMEWORK AND PROJECTS
 
 ## WEEK ONE: HTML-GIT-CSS
-<a href="https://august-johnson.github.io/week1/portfolio/index.html" target="_blank">Portfolio Homework</a>
+<a href="https://august-johnson.github.io/01-html-git-css/portfolio/index.html" target="_blank">Portfolio Homework</a>
 
-<a href="https://august-johnson.github.io/week1/wireframe/index.html" target="_blank">Wireframe Homework</a>
+<a href="https://august-johnson.github.io/01-html-git-css/wireframe/index.html" target="_blank">Wireframe Homework</a>
 <hr>
 
 ## WEEK TWO: CSS-BOOTSTRAP
-<a href="https://august-johnson.github.io/week2/Bootstrap-Portfolio/index.html" target="_blank">Bootstrap Homework</a>
+<a href="https://august-johnson.github.io/02-css-bootstrap/Bootstrap-Portfolio/index.html" target="_blank">Bootstrap Homework</a>
 
-<a href="https://august-johnson.github.io/week2/Responsive-Portfolio/index.html" target="_blank">Media Query Homework</a>
+<a href="https://august-johnson.github.io/02-cs-bootstrap/Responsive-Portfolio/index.html" target="_blank">Media Query Homework</a>
 <hr>
 
 ## WEEK THREE: JAVASCRIPT
-<a href="https://august-johnson.github.io/week3/hangman-game/index.html" target="_blank">JavaScript Hangman Game Homework</a>
+<a href="https://august-johnson.github.io/03-javascript/hangman-game/index.html" target="_blank">JavaScript Hangman Game Homework</a>
 
-<a href="https://august-johnson.github.io/week3/psychic-game/index.html" target="_blank">JavaScript Psychic Guessing Game Homework</a>
+<a href="https://august-johnson.github.io/03-javascript/psychic-game/index.html" target="_blank">JavaScript Psychic Guessing Game Homework</a>
 <hr>
 
 ## WEEK FOUR: JQUERY
-<a href="https://august-johnson.github.io/week4/crystal-game/index.html" target="_blank">JQuery Crystal Game Homework</a>
+<a href="https://august-johnson.github.io/04-jquery/crystal-game/index.html" target="_blank">JQuery Crystal Game Homework</a>
 <hr>
 
 ## WEEK FIVE: TIMERS
-<a href="https://august-johnson.github.io/week5/triviagame/index.html" target="_blank">JavaScript Timed Trivia Game Homework</a>
+<a href="https://august-johnson.github.io/05-timers/triviagame/index.html" target="_blank">JavaScript Timed Trivia Game Homework</a>
 <hr>
 
 ## WEEK SIX: AJAX
-<a href="https://august-johnson.github.io/week6/GIFtastic/index.html" target="_blank">GIPHY API Homework</a>
+<a href="https://august-johnson.github.io/06-ajax/GIFtastic/index.html" target="_blank">GIPHY API Homework</a>
 <hr>
 
 ## WEEK SEVEN: FIREBASE
-<a href="https://august-johnson.github.io/week7/train-schedule/index.html" target="_blank">Firebase Train Scheduler</a>
+<a href="https://august-johnson.github.io/07-firebase/train-schedule/index.html" target="_blank">Firebase Train Scheduler</a>
 <hr>
 
 ## WEEK EIGHT: GROUP PROJECT ONE
@@ -39,8 +39,8 @@
 <hr>
 
 ## WEEK NINE: PORTFOLIO UPDATE
-<a href="https://august-johnson.github.io/week9/index.html" target="_blank">Portfolio Redesign</a>
+<a href="https://august-johnson.github.io/09-portfolio-update/index.html" target="_blank">Portfolio Redesign</a>
 <hr>
 
 ## WEEK 10: NODE.JS
-<a href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/week10">LIRI Bot</a>
+<a href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/10-nodejs">LIRI Bot</a>
