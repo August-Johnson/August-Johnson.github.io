@@ -12,9 +12,9 @@ function Letter(letter) {
                 return this.letter;
             }
         },
-        // if the user correctly guesses the letter, switch the boolean value of that letter to true.
-        this.updateLetter = function(userLetter) {
-            if (userLetter === this.letter) {
+        // checks whether or not the letter is guessed or not. if it remains as false or is switched to true.
+        this.letterCheck = function(userLetter) {
+            if (userLetter.toLowerCase() === this.letter || userLetter.toUpperCase() === this.letter) {
                 this.letterGuessed = true;
             }
         }
