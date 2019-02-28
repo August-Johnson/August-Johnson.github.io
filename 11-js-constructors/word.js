@@ -1,5 +1,4 @@
 var Letter = require("./letters");
-var guessesLeft = 2;
 
 function Word(word) {
     this.word = word,
@@ -30,24 +29,32 @@ function Word(word) {
             for (i = 0; i < this.letters.length; i++) {
                 this.letters[i].letterCheck(guess);
             }
-            if (this.lettersTracker.indexOf(guess.toLowerCase()) === -1) {
-                guessesLeft--;
-                console.log("\nINCORRECT! YOU HAVE " + guessesLeft + " GUESSES LEFT\n");
-            }
-            // calling displayWord again so it reprints the updated word.
-            this.displayWord();
+            // if (this.guessesLeft > 0) {
+                if (this.lettersTracker.indexOf(guess.toLowerCase()) === -1) {
+                    // this.guessesLeft--;
+                    // console.log("\nINCORRECT! YOU HAVE " + this.guessesLeft + " GUESSES LEFT\n");
+                    console.log("WRONG");
+                }
+                // calling displayWord again so it reprints the (possibly) updated word.
+                this.displayWord();
+            // }
         }
 };
 // testing calls and functions
-var newWord = new Word("Hello");
-newWord.lettersArr();
-console.log(newWord.letters.length);
-newWord.displayWord();
-console.log(newWord.letters);
+// var newWord = new Word("Hello");
+// var newWord = new Word("King of The Hill");
+// newWord.lettersArr();
+// console.log(newWord.letters.length);
+// newWord.displayWord();
+// console.log(newWord.letters);
 
-newWord.userGuess("o");
-newWord.userGuess("H");
-newWord.userGuess("L");
-newWord.userGuess("m");
+// newWord.userGuess("o");
+// newWord.userGuess("H");
+// newWord.userGuess("L");
+// newWord.userGuess("k");
+// newWord.userGuess("t");
+// newWord.userGuess("e");
+// newWord.userGuess("i");
+// newWord.userGuess("z");
 // exporting the Word constructor
 module.exports = Word;
