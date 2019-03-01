@@ -84,15 +84,15 @@ function userPurchase() {
             connection.query(query, answer.item, function (err, results) {
                 if (err) throw err;
 
-                if (answer.units > results[0].stock_quantity) {
-                    // If there isn't as much of the product in stock as the user wanted to order, display message to them.
-                    console.log("\nNOT ENOUGH OF '" + results[0].product_name + "' IN STOCK!\n");
-                    askUser();
-                } else {
-                    // If there is enough of the product in stock, run the function that handles updating the table data.
-                    // Passing the relevant values as arguements.
-                    validQuantity(answer.item, answer.units, results[0]);
-                }
+                    if (answer.units > results[0].stock_quantity) {
+                        // If there isn't as much of the product in stock as the user wanted to order, display message to them.
+                        console.log("\nNOT ENOUGH OF '" + results[0].product_name + "' IN STOCK!\n");
+                        askUser();
+                    } else {
+                        // If there is enough of the product in stock, run the function that handles updating the table data.
+                        // Passing the relevant values as arguements.
+                        validQuantity(answer.item, answer.units, results[0]);
+                    }
             });
         }
     });
