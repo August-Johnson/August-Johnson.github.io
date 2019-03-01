@@ -10,4 +10,6 @@ If there is enough of the product in stock to meet the users request, it will di
 * Working with databases and handling how the data is returned and shared.
 * Adding enough logic so the user is never really 'trapped'
 
+### SCREENSHOTS OF APP
 
+![screenshot of initial user ask prompt](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/12-mysql/screenshots/askUser-pic.png)
