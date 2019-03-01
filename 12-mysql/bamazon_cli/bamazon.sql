@@ -2,6 +2,7 @@ DROP DATABASE IF EXISTS bamazon;
 
 CREATE DATABASE bamazon;
 
+USE bamazon;
 CREATE TABLE products (
 item_id INT(10) NOT NULL AUTO_INCREMENT,
 product_name VARCHAR(40) NOT NULL,
@@ -25,3 +26,12 @@ VALUES
 ("Running Shoes", "Clothing", 75, 200);
 
 SELECT * FROM products;
+
+SELECT department_name, COUNT(*) AS selection FROM products
+GROUP BY department_name;
+-- Updating the stock_quantity (started with subtracting 1 for testing) --
+UPDATE products
+SET stock_quantity = stock_quantity - 1
+WHERE item_id = 2;
+-- Testing the results value --
+SELECT * FROM products WHERE item_id = 2;
