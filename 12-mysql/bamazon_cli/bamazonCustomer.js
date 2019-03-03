@@ -47,7 +47,7 @@ function showItems() {
         for (i = 0; i < results.length; i++) {
             resultsArr.push("\nITEM ID: " + results[i].item_id + " || ITEM: " + results[i].product_name + " || PRICE: " + results[i].price + " || QUANTITY: " + results[i].stock_quantity + "\n\n--------------------------------------------------------------------------");
         }
-        console.log(resultsArr.join("\n"));
+        console.log("\nITEMS FOR SALE:\n" + resultsArr.join("\n"));
         userPurchase();
     });
 }
@@ -55,7 +55,7 @@ function showItems() {
 function userPurchase() {
     inquirer.prompt([
         {
-            name: "item",
+            name: "itemId",
             message: "ENTER THE ID OF THE ITEM YOU WISH TO PURCHASE",
             type: "input",
             validate: function (value) {
@@ -77,11 +77,11 @@ function userPurchase() {
         }
         else {
             // Converting the users input into numbers so it can be compared to the table's numerical values.
-            answer.item = parseInt(answer.item);
+            answer.item = parseInt(answer.itemId);
             answer.units = parseInt(answer.units);
 
             var query = "SELECT * FROM products WHERE item_id=?";
-            connection.query(query, answer.item, function (err, results) {
+            connection.query(query, answer.itemId, function (err, results) {
                 if (err) throw err;
 
                     if (answer.units > results[0].stock_quantity) {
@@ -91,7 +91,7 @@ function userPurchase() {
                     } else {
                         // If there is enough of the product in stock, run the function that handles updating the table data.
                         // Passing the relevant values as arguements.
-                        validQuantity(answer.item, answer.units, results[0]);
+                        validQuantity(answer.itemId, answer.units, results[0]);
                     }
             });
         }
