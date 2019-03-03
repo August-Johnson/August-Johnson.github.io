@@ -4,8 +4,8 @@
 
 ## BASIC CUSTOMER VERSION
 
-<a href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/12-mysql/bamazon_cli/customer-app" target="_blank">Github repo link</a>
+<a href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/12-mysql/bamazon_cli/customer-app" target=_blank>Github repo link</a>
 
 ## MANAGER VERSION (EXTRA)
 
-<a href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/12-mysql/bamazon_cli/manager-app" target="_blank">Github repo link</a>
+<a href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/12-mysql/bamazon_cli/manager-app" target=_blank>Github repo link</a>
