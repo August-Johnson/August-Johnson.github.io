@@ -43,8 +43,9 @@ If there is enough of the product in stock to meet the users request, it will di
   * ADD TO INVENTORY
   * ADD NEW PRODUCT
   
-  The manager can view all of the current products being sold, as well as viewing the products with a stock quantity of less than 5. The manager also has the ability to add more stock quantity to any product they wish. The manager has the option to add another product to the table.</p>
+  The manager can view all of the current products being sold, as well as viewing the products with a stock quantity of less than five. The manager also has the ability to add more stock quantity to any product they wish. The manager has the option to add another product to the table.</p>
   
+  <hr>
 
 #### MANAGER OPTIONS
 <p>The list of actions the manager can do.</p>
