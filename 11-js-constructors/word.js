@@ -23,9 +23,11 @@ function Word(word) {
         },
         // Function that runs the 'letterCheck' function for the user's guess on each letter in the current word.
         this.userGuess = function (guess) {
+
             for (i = 0; i < this.letters.length; i++) {
                 this.letters[i].letterCheck(guess);
             }
+            
             // If their guess is wrong, the guesses go down by one and they are alerted of such.
             if (this.word.toLowerCase().indexOf(guess) === -1) {
                 this.guessesLeft--;
