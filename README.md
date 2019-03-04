@@ -45,5 +45,8 @@
 ## WEEK 10: NODE.JS
 <a href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/10-nodejs" target="_blank">LIRI Bot</a>
 
+## WEEK 11: CONSTRUCTORS
+<a href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/11-js-constructors">Constructor Hangman</a>
+
 ## WEEK 12: MYSQL
 <a href="https://github.com/August-Johnson/August-Johnson.github.io/tree/master/12-mysql" target="_blank">BAMAZON CLI</a>
