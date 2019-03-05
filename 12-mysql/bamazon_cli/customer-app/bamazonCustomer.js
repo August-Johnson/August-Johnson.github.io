@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-require("dotenv").config();
+require("dotenv").config( {path: "../.env" });
 // I hid the server info just in case. (Don't know if it can be abused, just being 'safe').
 var connection = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -10,6 +10,7 @@ var connection = mysql.createConnection({
     user: process.env.DB_USER,
 
     password: process.env.DB_PASS,
+
     database: "bamazon"
 });
 // Upon connecting t0 the database, run the function that asks the user what they want to do.
@@ -67,17 +68,17 @@ function userPurchase() {
         },
         {
             name: "units",
-            message: "HOW MANY UNITS WOULD YOU LIKE TO PURCHASE? (IF YOU CHANGED YOUR MIND, TYPE exit)",
+            message: "HOW MANY UNITS WOULD YOU LIKE TO PURCHASE? (TYPE Q TO QUIT)",
             type: "input"
         }
     ]).then(function (answer) {
-        // In case the user changed their mind, they can type 'exit' and it'll take them back to the starting prompt.
-        if (answer.units.toLowerCase() === "exit") {
+        // In case the user changed their mind, they can type 'q' and it'll take them back to the starting prompt.
+        if (answer.units.toLowerCase() === "q") {
             askUser();
         }
         else {
             // Converting the users input into numbers so it can be compared to the table's numerical values.
-            answer.item = parseInt(answer.itemId);
+            answer.itemId = parseInt(answer.itemId);
             answer.units = parseInt(answer.units);
 
             var query = "SELECT * FROM products WHERE item_id=?";
@@ -90,7 +91,7 @@ function userPurchase() {
                         askUser();
                     } else {
                         // If there is enough of the product in stock, run the function that handles updating the table data.
-                        // Passing the relevant values as arguements.
+                        // Passing the relevant data as arguements.
                         validQuantity(answer.itemId, answer.units, results[0]);
                     }
             });
@@ -99,10 +100,10 @@ function userPurchase() {
 }
 // Function for if there was enough product to match the user's order.
 function validQuantity(itemId, unitsAmount, results) {
-    var query = "UPDATE products SET stock_quantity=? WHERE ?";
+    var query = "UPDATE products SET stock_quantity=?, units_sold=? WHERE ?";
     // Calculating the total cost of the order.
     var total = unitsAmount * results.price;
-    connection.query(query, [results.stock_quantity - unitsAmount, { item_id: itemId }], function () {
+    connection.query(query, [results.stock_quantity - unitsAmount, results.units_sold + unitsAmount, { item_id: itemId }], function () {
         console.log("\nYOUR TOTAL IS $" + total + "\n");
         askUser();
     });

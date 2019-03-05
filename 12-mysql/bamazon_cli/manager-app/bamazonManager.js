@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-require("dotenv").config();
+require("dotenv").config( {path: "../.env"} );
 // I hid the server info just in case. (Don't know if it can be abused, just being 'safe').
 var connection = mysql.createConnection({
     host: process.env.DB_HOST,
