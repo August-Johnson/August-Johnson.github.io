@@ -8,3 +8,6 @@
 * Making sure my code wasn't a mess or confusing.
 * Using constructors as the primary method of creating and calling functions.
 
+### EXTRA FUNCTIONALITY I ADDED
+* Making sure the user cannot guess the same letters they have already guessed.
+* Making sure the same word is never chosen 2 times in a row.
