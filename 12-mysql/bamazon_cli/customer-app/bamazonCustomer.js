@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-require("dotenv").config( {path: "../.env" });
+require("dotenv").config({ path: "../.env" });
 // I hid the server info just in case. (Don't know if it can be abused, just being 'safe').
 var connection = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -85,25 +85,25 @@ function userPurchase() {
             connection.query(query, answer.itemId, function (err, results) {
                 if (err) throw err;
 
-                    if (answer.units > results[0].stock_quantity) {
-                        // If there isn't as much of the product in stock as the user wanted to order, display message to them.
-                        console.log("\nNOT ENOUGH OF '" + results[0].product_name + "' IN STOCK!\n");
-                        askUser();
-                    } else {
-                        // If there is enough of the product in stock, run the function that handles updating the table data.
-                        // Passing the relevant data as arguements.
-                        validQuantity(answer.itemId, answer.units, results[0]);
-                    }
+                // If there isn't as much of the product in stock as the user wanted to order, display message to them.
+                if (answer.units > results[0].stock_quantity) {
+                    console.log("\nNOT ENOUGH OF '" + results[0].product_name + "' IN STOCK!\n");
+                    askUser();
+                } else {
+                    // If there is enough of the product in stock, run the function that handles updating the table data.
+                    // Passing the relevant data as arguements.
+                    validQuantity(answer.itemId, answer.units, results[0]);
+                }
             });
         }
     });
 }
 // Function for if there was enough product to match the user's order.
 function validQuantity(itemId, unitsAmount, results) {
-    var query = "UPDATE products SET stock_quantity=?, units_sold=? WHERE ?";
+    var query = "UPDATE products SET stock_quantity=?, units_sold=?, product_sales=? WHERE ?";
     // Calculating the total cost of the order.
     var total = unitsAmount * results.price;
-    connection.query(query, [results.stock_quantity - unitsAmount, results.units_sold + unitsAmount, { item_id: itemId }], function () {
+    connection.query(query, [results.stock_quantity - unitsAmount, results.units_sold + unitsAmount, results.price * results.units_sold, { item_id: itemId }], function () {
         console.log("\nYOUR TOTAL IS $" + total + "\n");
         askUser();
     });

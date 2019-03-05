@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-require("dotenv").config();
+require("dotenv").config( {path: "../.env"} );
 // I hid the server info just in case. (Don't know if it can be abused, just being 'safe').
 var connection = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -30,7 +30,7 @@ function supervisorOptions() {
     ).then(function (answer) {
         switch (answer.action) {
             case "VIEW PRODUCT SALES BY DEPARTMENT":
-                // function
+                departmentSales();
                 break;
 
                 case "CREATE NEW DEPARTMENT":
@@ -49,7 +49,7 @@ function departmentSales() {
         if (err) throw err;
         var resultsArr = [];
         for (i = 0; i < results.length; i++) {
-            resultsArr.push("\nDEPARTMENT ID: " + results[i].department_id + " || DEPARTMENT NAME: " + results[i].department_name);
+            resultsArr.push("\nDEPARTMENT ID: " + results[i].department_id + " || DEPARTMENT NAME: " + results[i].department_name + " || OVERHEAD COSTS: $" + results[i].overhead_costs + " || PRODUCT SALES: $" + results[i].product_sales + "\n\n-------------------------------------------------------------------------------------------------------");
         }
         console.log("\n" + resultsArr.join("\n"));
         // function
