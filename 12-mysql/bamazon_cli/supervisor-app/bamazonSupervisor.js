@@ -45,14 +45,14 @@ function supervisorOptions() {
 }
 // Function for if the user chose to browse items. Show the list of items and then run the function to deal with the purchase step.
 function departmentSales() {
-    connection.query("SELECT * FROM departments", function (err, results) {
+    var query = "SELECT DISTINCT departments.department_id, departments.department_name, departments.overhead_costs, SUM(products.product_sales) AS product_sales";
+    query += " FROM departments";
+    query += " INNER JOIN products ON products.department_name = departments.department_name";
+    query += " GROUP BY department_name;";
+
+    connection.query(query, function(err, results) {
         if (err) throw err;
-        var resultsArr = [];
-        for (i = 0; i < results.length; i++) {
-            resultsArr.push("\nDEPARTMENT ID: " + results[i].department_id + " || DEPARTMENT NAME: " + results[i].department_name + " || OVERHEAD COSTS: $" + results[i].overhead_costs + " || PRODUCT SALES: $" + results[i].product_sales + "\n\n-------------------------------------------------------------------------------------------------------");
-        }
-        console.log("\n" + resultsArr.join("\n"));
-        // function
-        supervisorOptions();
+        
+        console.log(results[0]);
     });
 }

@@ -100,10 +100,10 @@ function userPurchase() {
 }
 // Function for if there was enough product to match the user's order.
 function validQuantity(itemId, unitsAmount, results) {
-    var query = "UPDATE products SET stock_quantity=?, units_sold=?, product_sales=? WHERE ?";
+    var query = "UPDATE products SET stock_quantity=?, product_sales=? WHERE ?";
     // Calculating the total cost of the order.
     var total = unitsAmount * results.price;
-    connection.query(query, [results.stock_quantity - unitsAmount, results.units_sold + unitsAmount, results.price * results.units_sold, { item_id: itemId }], function () {
+    connection.query(query, [results.stock_quantity - unitsAmount, results.product_sales + total, { item_id: itemId }], function () {
         console.log("\nYOUR TOTAL IS $" + total + "\n");
         askUser();
     });
