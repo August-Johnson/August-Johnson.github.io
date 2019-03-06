@@ -172,7 +172,6 @@ function createItem() {
             // Storing all of the data into an array called 'values' so it can be passed easilt into the addItem function.
             var values = [answer.item, answer.department, answer.price, answer.quantity];
             
-           console.log(values);
            addItem(values);
         });
     });
