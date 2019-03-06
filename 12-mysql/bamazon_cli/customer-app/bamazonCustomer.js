@@ -13,7 +13,7 @@ var connection = mysql.createConnection({
 
     database: "bamazon"
 });
-// Upon connecting t0 the database, run the function that asks the user what they want to do.
+// Upon connecting to the database, run the function that asks the user what they want to do.
 connection.connect(function (err) {
     if (err) throw err;
     askUser();

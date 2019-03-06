@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-require("dotenv").config( {path: "../.env"} );
+require("dotenv").config({ path: "../.env" });
 // I hid the server info just in case. (Don't know if it can be abused, just being 'safe').
 var connection = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
     password: process.env.DB_PASS,
     database: "bamazon"
 });
-// Upon connecting t0 the database, run the function that asks the user what they want to do.
+// Upon connecting to the database, run the function managerOptions.
 connection.connect(function (err) {
     if (err) throw err;
     managerOptions();
@@ -42,7 +42,7 @@ function managerOptions() {
                 break;
 
             case "ADD NEW PRODUCT":
-                addNewItem();
+                createItem();
                 break;
 
             case "EXIT":
@@ -57,9 +57,9 @@ function showAllProducts() {
         if (err) throw err;
         var resultsArr = [];
         for (i = 0; i < results.length; i++) {
-            resultsArr.push("\nPRODUCTS FOR SALE:\nITEM ID: " + results[i].item_id + " || ITEM: " + results[i].product_name + " || PRICE: " + results[i].price + " || QUANTITY: " + results[i].stock_quantity + "\n\n--------------------------------------------------------------------------");
+            resultsArr.push("\nITEM ID: " + results[i].item_id + " || ITEM: " + results[i].product_name + " || PRICE: " + results[i].price + " || QUANTITY: " + results[i].stock_quantity + "\n\n--------------------------------------------------------------------------");
         }
-        console.log(resultsArr.join("\n"));
+        console.log("\nPRODUCTS FOR SALE:\n" + resultsArr.join("\n"));
         managerOptions();
     });
 }
@@ -131,37 +131,62 @@ function addToInventory() {
         }
     });
 }
-// Function that allows the manager to add a new product to the table.
-function addNewItem() {
-    inquirer.prompt([
-        {
-            name: "item",
-            message: "WHAT IS THE PRODUCT NAME?"
-        },
-        {
-            name: "category",
-            message: "WHAT DEPARTMENT WOULD THE ITEM BE CATEGORIZED UNDER?"
-        },
-        {
-            name: "price",
-            message: "HOW MUCH DOES IT COST?"
-        },
-        {
-            name: "quantity",
-            message: "HOW MANY ARE CURRENTLY IN STOCK?"
+
+// Function that inserts the data into the table 'products'.
+function createItem() {
+    var query = "SELECT DISTINCT department_name FROM products";
+    connection.query(query, function (err, results) {
+        if (err) throw err;
+
+        var departmentsListArr = [];
+
+        for (i = 0; i < results.length; i++) {
+            departmentsListArr.push(results[i].department_name);
         }
-    ]).then(function (answer) {
 
-        var query = "INSERT INTO products (product_name, department_name, price, stock_quantity) VALUES (?, ?, ?, ?)";
-        answer.price = parseInt(answer.price);
-        answer.quantity = parseInt(answer.quantity);
+        inquirer.prompt([
+            {
+                name: "item",
+                message: "WHAT IS THE PRODUCT NAME?"
+            },
+            {
+                name: "department",
+                message: "WHAT IS THE DEPARTMENT NAME?",
+                type: "list",
+                choices: departmentsListArr
+            },
+            {
+                name: "price",
+                message: "HOW MUCH DOES IT COST?"
+            },
+            {
+                name: "quantity",
+                message: "HOW MANY ARE CURRENTLY IN STOCK?"
+            }
+        ]).then(function (answer) {
 
-        var values = [answer.item, answer.category, answer.price, answer.quantity];
+            // Converting the values of price and quantity into numbers.
+            answer.price = parseFloat(answer.price);
+            answer.quantity = parseInt(answer.quantity);
 
-        connection.query(query, values, function (err, results) {
-            if (err) throw err;
-            console.log("\nITEM HAS BEEN ADDED!\n");
-            showAllProducts();
+            // Storing all of the data into an array called 'values' so it can be passed easilt into the addItem function.
+            var values = [answer.item, answer.department, answer.price, answer.quantity];
+            
+           console.log(values);
+           addItem(values);
         });
+    });
+}
+
+// Function takes the data from the createItem function and inserts it into the table.
+function addItem(values) {
+
+    var query = "INSERT INTO products (product_name, department_name, price, stock_quantity) VALUES (?, ?, ?, ?)";
+
+    connection.query(query, values, function (err, results) {
+        if (err) throw err;
+
+        console.log("\nITEM HAS BEEN ADDED!\n");
+        showAllProducts();
     });
 }

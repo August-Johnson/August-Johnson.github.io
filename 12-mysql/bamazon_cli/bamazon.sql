@@ -32,7 +32,6 @@ SELECT * FROM products;
 SELECT department_name, COUNT(*) AS selection FROM products
 GROUP BY department_name;
 
--- Data for the supervisor version (still in progress) --
 CREATE TABLE departments (
 department_id INT NOT NULL AUTO_INCREMENT,
 department_name VARCHAR(40) NOT NULL,
@@ -52,3 +51,12 @@ UPDATE departments SET overhead_costs = 2500 WHERE department_name = "Health";
 UPDATE departments SET overhead_costs = 1500 WHERE department_name = "Toys";
 
 SELECT * FROM departments;
+SELECT * FROM products;
+
+-- getting total product sales number from a department --
+SELECT SUM(product_sales) AS total_sales FROM products GROUP BY department_name;
+
+SELECT DISTINCT departments.department_id, departments.department_name, departments.overhead_costs, SUM(products.product_sales) AS product_sales
+FROM departments
+INNER JOIN products ON products.department_name = departments.department_name
+GROUP BY department_name;

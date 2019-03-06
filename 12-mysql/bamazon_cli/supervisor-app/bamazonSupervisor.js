@@ -12,13 +12,13 @@ var connection = mysql.createConnection({
     password: process.env.DB_PASS,
     database: "bamazon"
 });
-// Upon connecting t0 the database, run the function that asks the user what they want to do.
+// Upon connecting to the database, run supervisorOptions function.
 connection.connect(function (err) {
     if (err) throw err;
     supervisorOptions();
 });
 // Functions
-// Function for initially asking the user what they want to do, (browse items or exit).
+// Function for asking the supervisor what they want to do.
 function supervisorOptions() {
     inquirer.prompt(
         {
@@ -43,7 +43,7 @@ function supervisorOptions() {
         }
     });
 }
-// Function for if the user chose to browse items. Show the list of items and then run the function to deal with the purchase step.
+// Function for the supervisor to view departments data and sales.
 function departmentSales() {
     var query = "SELECT DISTINCT departments.department_id, departments.department_name, departments.overhead_costs, SUM(products.product_sales) AS product_sales";
     query += " FROM departments";
@@ -53,6 +53,23 @@ function departmentSales() {
     connection.query(query, function(err, results) {
         if (err) throw err;
         
-        console.log(results[0]);
+        var departmentsArr = [];
+        for (i=0;i<results.length;i++) {
+
+            // Calculating the total profir of each department.
+            var totalProfit = results[i].product_sales - results[i].overhead_costs;
+            // Pushing the relevant data to departmentsArr.
+            departmentsArr.push("\nDEPARTMENT ID: " + results[i].department_id + 
+            " || DEPARTMENT NAME: " + results[i].department_name + 
+            " || OVERHEAD COSTS: $" + results[i].overhead_costs + 
+            " || PRODUCT SALES: $" + results[i].product_sales + 
+            " || TOTAL PROFIT: $" + totalProfit + 
+            "\n\n------------------------------------------------------------------------------------------");
+        }
+        // Logging the 'finished' departmentsArr to the supervisor, and then runs the function for the supervisor to choose what they want to do.
+        console.log(departmentsArr.join("\n") + "\n");
+        supervisorOptions();
     });
 }
+
+// Function that lets the supervisor add a new department.
