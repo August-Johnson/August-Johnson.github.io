@@ -40,7 +40,7 @@
 
 <hr>
 
-### If the user has already guessed the same letter
+### If the user has already guessed the same letter (tried to guess the letter 'n' again)
 ![screenshot of concert-this command output](https://github.com/August-Johnson/August-Johnson.github.io/blob/master/11-js-constructors/screenshots/alreadyGuessed-pic.png)
 
 <hr>
