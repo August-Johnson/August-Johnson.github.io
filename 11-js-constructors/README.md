@@ -6,7 +6,7 @@
 
 ### letters.js
 
-<p>This JavaScript file is for creating the constructor 'Letter'. The Letter constructor takes in an arguement of 'letter' that it references in its other functions. It has a boolean value called 'letterGuessed', which defines whether or not the letter has been guessed yet or not. The function 'displayLetter' will return the actual letter as a string if the boolean value is true, otherwise it will return an underscore as a string (I decided to use that as my placeholder value). The constructor also has a function called 'letterCheck' where it takes in the user's guess and compares it to whatever the current letter is and changes the boolean value to true if it matches. I say *current letter* because it will loop through the word and check each letter.</p>
+<p>This JavaScript file is for creating the constructor <b>'Letter'</b>. The Letter constructor takes in an arguement of *'letter'* that it references in its other functions. It has a boolean value called 'letterGuessed', which defines whether or not the letter has been guessed yet or not. The function 'displayLetter' will return the actual letter as a string if the boolean value is true, otherwise it will return an underscore as a string (I decided to use that as my placeholder value). The constructor also has a function called 'letterCheck' where it takes in the user's guess and compares it to whatever the current letter is and changes the boolean value to true if it matches. I say *current letter* because it will loop through the word and check each letter.</p>
 
 <hr>
 
