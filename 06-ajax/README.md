@@ -9,4 +9,4 @@
 
 ### LINK TO DEPLOYED ASSIGNMENT:
 
-<a href="https://august-johnson.github.io/week6/GIFtastic/index.html">GIPHY API assignment</a>
+<a href="https://august-johnson.github.io/06-ajax/GIFtastic/index.html">GIPHY API assignment</a>
