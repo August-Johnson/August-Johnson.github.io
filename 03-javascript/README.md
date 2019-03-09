@@ -9,6 +9,6 @@
 
 
 ### LINKS TO DEPLOYED ASSIGNMENTS:
-<a href="https://august-johnson.github.io/week3/hangman-game/index.html">Hangman game assignment</a>
+<a href="https://august-johnson.github.io/03-javascript/hangman-game/index.html">Hangman game assignment</a>
 
-<a href="https://august-johnson.github.io/week3/psychic-game/index.html">Psychic guessing game assignment</a>
+<a href="https://august-johnson.github.io/03-javascript/psychic-game/index.html">Psychic guessing game assignment</a>
