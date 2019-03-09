@@ -9,4 +9,4 @@
 
 ### LINK TO DEPLOYED ASSIGNMENT:
 
-<a href="https://august-johnson.github.io/week4/crystal-game/index.html">JQuery Crystal game assignment</a>
+<a href="https://august-johnson.github.io/04-jquery/crystal-game/index.html">JQuery Crystal game assignment</a>
