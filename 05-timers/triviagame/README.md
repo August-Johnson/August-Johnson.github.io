@@ -8,4 +8,4 @@
 
 ### LINK TO DEPLOYED ASSIGNMENT:
 
-<a href="https://august-johnson.github.io/week5/triviagame/index.html">Trivia game assignment</a>
+<a href="https://august-johnson.github.io/05-timers/triviagame/index.html">Trivia game assignment</a>
