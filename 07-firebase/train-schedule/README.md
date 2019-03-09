@@ -9,4 +9,4 @@
 
 ### LINK DEPLOYED ASSIGNMENT:
 
-<a href="https://august-johnson.github.io/week7/train-schedule/index.html">Firebase Train scheduler assignment</a>
+<a href="https://august-johnson.github.io/07-firebase/train-schedule/index.html">Firebase Train scheduler assignment</a>
