@@ -1,4 +1,4 @@
-# CODING BOOTCAMP HOMEWORK AND PROJECTS
+# <a href="https://august-johnson.github.io/">View my Portfolio</a>
 
 ## WEEK ONE: HTML-GIT-CSS
 <a href="https://august-johnson.github.io/01-html-git-css/portfolio/index.html" target="_blank">Portfolio Homework</a>
