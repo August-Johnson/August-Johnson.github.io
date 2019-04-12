@@ -90,6 +90,7 @@ address img {
 .btn {
     width: 100%;
     margin: 5px auto;
+    font-size: 115%;
 }
 
 .card {
@@ -101,6 +102,7 @@ address img {
     margin-bottom: 5px;
     min-height: 100px;
     max-height: 100px;
+    background-color: #87CEFA;
 }
 
 .card-body {
@@ -108,6 +110,7 @@ address img {
     padding: 10px;
     min-height: 70px;
     max-height: 70px;
+    background-color: #FFC107FA;
 }
 
 .technologies-used {
@@ -117,6 +120,7 @@ address img {
 .group-member {
     margin: 5px;
     text-decoration: underline;
+    color: #0000CD;
 }
 
 .card-footer {
@@ -153,5 +157,6 @@ img.card-img-top {
         width: 45%;
         display: inline-block;
         margin: 5px;
+        font-size: 110%;
     }
 }
