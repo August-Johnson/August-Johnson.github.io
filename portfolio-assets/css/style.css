@@ -1,0 +1,157 @@
+nav.navbar {
+    margin-bottom: 20px;
+}
+
+body {
+    padding-top: 50px;
+    /* background-color: #708090; */
+    background-image: url("../images/background-image.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+em {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 165%;
+    padding: 5px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+    margin: 15px;
+    padding: 5px;
+}
+
+h4 {
+   padding: 10px;
+}
+
+h5 {
+    text-align: center;
+}
+
+h6 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 115%;
+}
+
+hr {
+    background-color: #666666;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    padding: 10px;
+    margin-top: 30px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+address {
+    margin-bottom: 0;
+    padding: 5px;
+}
+
+address img {
+    width: 65px;
+    height: auto;
+    margin: 10px;
+}
+
+#phone-number {
+    color: #0000FF;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.jumbotron {
+    padding: 15px;
+}
+
+.about-me-text {
+    font-size: 125%;
+    line-height: 1.6;
+    font-weight: 550;
+    padding-top: 0px;
+}
+
+.btn {
+    width: 100%;
+    margin: 5px auto;
+}
+
+.card {
+    height: 95%;
+    margin-bottom: 15px;
+}
+
+.card-header {
+    margin-bottom: 5px;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.card-body {
+    flex: 0;
+    padding: 10px;
+    min-height: 70px;
+    max-height: 70px;
+}
+
+.technologies-used {
+    color: rgb(50,50,50);
+}
+
+.group-member {
+    margin: 5px;
+    text-decoration: underline;
+}
+
+.card-footer {
+    padding: 15px;
+}
+
+img.card-img-top {
+    width: 100%;
+    min-height: 200px;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+/* media queries */
+@media only screen and (min-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .link-with-border {
+        border-left: 1px solid #ffffff;
+        margin-left: 5px;
+    }
+
+    .nav-item {
+        padding: 5px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .btn {
+        width: 45%;
+        display: inline-block;
+        margin: 5px;
+    }
+}
