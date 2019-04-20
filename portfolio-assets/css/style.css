@@ -108,9 +108,10 @@ address img {
 .card-body {
     flex: 0;
     padding: 10px;
-    min-height: 70px;
-    max-height: 70px;
+    min-height: 85px;
+    max-height: 85px;
     background-color: #FFC107FA;
+    overflow: overlay;
 }
 
 .technologies-used {
