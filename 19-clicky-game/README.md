@@ -1,3 +1,10 @@
+# WEEK 19 - CLICKY GAME
+
+<p>This week's homework assignment was to create a memory card game using React. The user is diplayed an assortment of cards (4x3) and click on each one to score a point. If the user clicks a card they have already clicked before, they lose the game and their score is reset back to 0.</p>
+
+## CHALLENGES
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
