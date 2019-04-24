@@ -7,9 +7,11 @@ function Navbar(props) {
                 <h1>Clicky Game</h1>
             </div>
             <div className="col-5">
-                <h2 style={{color: props.messageColor}}>{props.message}</h2>
+                {/* Message and its color to display depending on the user's guess, coming in as props*/}
+                <h2 style={{ color: props.messageColor }}>{props.message}</h2>
             </div>
             <div className="col-3">
+                {/* Score and highscore values to display, brought in as props */}
                 Score: {props.score} | Highscore: {props.highscore}
             </div>
         </nav>

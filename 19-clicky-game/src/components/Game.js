@@ -23,6 +23,11 @@ class Game extends Component {
         this.shuffleCards();
     }
 
+    // Every update (in this case, clicking a card), run the method that determines whether or not to update the highscore.
+    componentDidUpdate() {
+        this.highscoreCheck();
+    }
+
     // Method that shuffles the order in which the cards will render.
     shuffleCards = () => {
 
@@ -47,15 +52,20 @@ class Game extends Component {
 
             // Store current card in the temp variable.
             tempCardValue = cardArr[currentIndex];
+
+            // Swap the current card with the randomly chosen card.
             cardArr[currentIndex] = cardArr[randomCard];
+
+            // Set the card that was randomly chosen equal to the card we stored earlier. (switch places).
             cardArr[randomCard] = tempCardValue;
         }
+        // Setting the state for the randomized array of cards.
         this.setState({ tempCardArrangement: cardArr });
     }
 
-    // gameOver function
-    // score reset and message
+    // Method for handling when the user loses by clicking an image they already clicked.
     handleLoseCondition = () => {
+        // Resetting the score back to 0 and displaying the message (in red) alerting them they lost.
         this.setState({
             score: 0,
             message: "You Guessed Incorrectly!",
@@ -63,30 +73,34 @@ class Game extends Component {
         });
     }
 
-    // good guess function
-    // score increment
+    // Method that handles when the user guesses correctly.
     handleWinCondition = () => {
+        // Incrementing the score by 1 and displaying a message (in green) to the user telling them they have guessed correctly.
         this.setState({
-            score: (this.state.score + 1),
+            score: this.state.score + 1,
             message: "You Guessed Correctly!",
             messageColor: "#32CD32"
         });
     }
 
+    // Method that checks if the user's end score was higher than the current highscore and updates the state accordingly.
+    highscoreCheck = () => this.state.score > this.state.highscore ? this.setState({ highscore: this.state.score }) : false
+
+
     render() {
-        
+
         return (
             <div>
                 <Navbar message={this.state.message} messageColor={this.state.messageColor} score={this.state.score} highscore={this.state.highscore} />
                 <Header />
                 <Container>
                     <Row>
+                        {/* Passing the card images, card array, and all the necessary methods */}
                         {this.state.tempCardArrangement.map((card) =>
                             <Card key={card.id} cardImage={card.image} cardArr={this.state.gameCards}
                                 shuffleCards={this.shuffleCards} handleLoseCondition={this.handleLoseCondition}
                                 handleWinCondition={this.handleWinCondition} />)}
                     </Row>
-                    {/* {this.state.gameCards.map(card => <Card key={card.id} id={card.id} cardImage={card.image} shuffleCards={this.shuffleCards(gameCards)} />)} */}
                 </Container>
             </div >
         )
