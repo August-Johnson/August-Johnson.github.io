@@ -1,8 +1,9 @@
 .card {
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 70%;
+    background-position: center;
     width: 100%;
-    height: 200px;
+    height: 175px;
     margin: 15px auto;
   }
   
@@ -11,17 +12,6 @@
       animation-duration: 0.25s;
       animation-fill-mode: forwards; 
       cursor: pointer;
-  }
-
-  #card-1 {
-      background-image: url("./card-pics/placeholder-pic.png");
-  }
-
-  #card-2 {
-      background-image: url("./card-pics/card-image-R.png");
-      background-size: 75%;
-      background-position: center;
-      background-repeat: no-repeat;
   }
   
   @keyframes image-bulge {

@@ -5,7 +5,6 @@ import Container from "../Container";
 import Row from "../Row";
 import Card from "../Card/Card";
 import gameCards from "../../cards.json";
-import "./Game.css";
 
 class Game extends Component {
     // Setting the state of the message and its color, the original array of cards being imported from cards.json, and the score and highscore.
@@ -100,7 +99,7 @@ class Game extends Component {
                     <Row>
                         {/* Passing the card images, card array, and all the necessary methods */}
                         {this.state.tempCardArrangement.map((card) =>
-                            <Card key={card.id} id={card.id} cardImage={card.image} cardArr={this.state.gameCards}
+                            <Card key={card.id} id={card.id} image={card.image} cardArr={this.state.gameCards}
                                 shuffleCards={this.shuffleCards} handleLoseCondition={this.handleLoseCondition}
                                 handleWinCondition={this.handleWinCondition} />)}
                     </Row>

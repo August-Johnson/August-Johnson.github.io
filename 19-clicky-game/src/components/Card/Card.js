@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./Card.css";
+//var images = require("../../images/placeholder-pic.png");
 
 class Card extends Component {
     // Set the clicked state of the card to false initially
@@ -31,7 +32,9 @@ class Card extends Component {
     render() {
         return (
             <div className="col-3">
-                <div className="card" id={`card-${this.props.id}`} onClick={this.handleClick}></div >
+                <div className="card" id={`card-${this.props.id}`} style={{ backgroundImage: `url(${this.props.image})`}} onClick={this.handleClick}>
+                </div >
+
             </div>
         );
     }
