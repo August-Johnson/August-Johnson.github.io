@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import Navbar from "./Navbar";
-import Header from "./Header";
-import Container from "./Container";
-import Row from "./Row";
-import Card from "./Card";
-import gameCards from "../cards.json";
+import Navbar from "../Navbar/Navbar";
+import Header from "../Header/Header";
+import Container from "../Container";
+import Row from "../Row";
+import Card from "../Card/Card";
+import gameCards from "../../cards.json";
+import "./Game.css";
 
 class Game extends Component {
     // Setting the state of the message and its color, the original array of cards being imported from cards.json, and the score and highscore.
@@ -21,6 +22,7 @@ class Game extends Component {
     // Shuffle the order of the counts on initial load.
     componentDidMount() {
         this.shuffleCards();
+        console.log(gameCards);
     }
 
     // Every update (in this case, clicking a card), run the method that determines whether or not to update the highscore.
@@ -29,6 +31,7 @@ class Game extends Component {
     }
 
     // Method that shuffles the order in which the cards will render.
+    // I used the Fisher-Yates Shuffle Algorithm.
     shuffleCards = () => {
 
         // setting a variable of cardArr equal to the original source of cards in the state.
@@ -97,7 +100,7 @@ class Game extends Component {
                     <Row>
                         {/* Passing the card images, card array, and all the necessary methods */}
                         {this.state.tempCardArrangement.map((card) =>
-                            <Card key={card.id} cardImage={card.image} cardArr={this.state.gameCards}
+                            <Card key={card.id} id={card.id} cardImage={card.image} cardArr={this.state.gameCards}
                                 shuffleCards={this.shuffleCards} handleLoseCondition={this.handleLoseCondition}
                                 handleWinCondition={this.handleWinCondition} />)}
                     </Row>

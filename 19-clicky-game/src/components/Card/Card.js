@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./Card.css";
 
 class Card extends Component {
     // Set the clicked state of the card to false initially
@@ -30,7 +31,7 @@ class Card extends Component {
     render() {
         return (
             <div className="col-3">
-                <div className="card" style={{ backgroundImage: `url('${this.props.cardImage}')` }} onClick={this.handleClick}></div >
+                <div className="card" id={`card-${this.props.id}`} onClick={this.handleClick}></div >
             </div>
         );
     }
