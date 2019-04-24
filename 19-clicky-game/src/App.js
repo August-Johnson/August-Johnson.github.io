@@ -1,21 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import Navbar from "./components/Navbar";
-import Wrapper from "./components/Wrapper";
-import Header from "./components/Header";
+import Game from "./components/Game";
 
-class App extends Component {
-
-
-
-    render() {
-        return (
-            <Wrapper>
-                <Navbar />
-                <Header>Clicky Game!</Header>
-            </Wrapper>
-        );
-    }
+function App() {
+    return <Game />;
 }
 
 export default App;

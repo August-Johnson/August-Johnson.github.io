@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Header(props) {
+function Header() {
     return (
         <div className="clicky-game-header">
-            <h2>{props.children}</h2>
+            <h2>Clicky Game!</h2>
             <p>Click on an image to earn points, but don't click on any more than once!</p>
         </div>
     );

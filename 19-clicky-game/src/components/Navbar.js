@@ -1,17 +1,16 @@
 import React from 'react';
-// import Score from "./Score";
 
 function Navbar(props) {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary text-white fixed-top">
-            <div className="col-3">
-                <h1>Hello</h1>
+        <nav className="navbar navbar-expand-lg navbar-dark text-white fixed-top">
+            <div className="col-4">
+                <h1>Clicky Game</h1>
             </div>
-            <div className="col-6">
-                <h2>Click an image to begin!</h2>
+            <div className="col-5">
+                <h2 style={{color: props.messageColor}}>{props.message}</h2>
             </div>
             <div className="col-3">
-                {/* <Score /> */}
+                Score: {props.score} | Highscore: {props.highscore}
             </div>
         </nav>
     );

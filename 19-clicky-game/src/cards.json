@@ -1,62 +1,50 @@
 [
     {
         "id": 1,
-        "image": "",
-        "alreadyPicked": false
+        "image": "/images/placeholder-pic.png"
     },
     {
         "id": 2,
-        "image": "",
-        "alreadyPicked": false
+        "image": ""
     },
     {
         "id": 3,
-        "image": "",
-        "alreadyPicked": false
+        "image": ""
     },
     {
         "id": 4,
-        "image": "",
-        "alreadyPicked": false
+        "image": ""
     },
     {
         "id": 5,
-        "image": "",
-        "alreadyPicked": false
+        "image": ""
     },
     {
         "id": 6,
-        "image": "",
-        "alreadyPicked": false
+        "image": ""
     },
     {
         "id": 7,
-        "image": "",
-        "alreadyPicked": false
+        "image": ""
     },
     {
         "id": 8,
-        "image": "",
-        "alreadyPicked": false
+        "image": ""
     },
     {
         "id": 9,
-        "image": "",
-        "alreadyPicked": false
+        "image": ""
     },
     {
         "id": 10,
-        "image": "",
-        "alreadyPicked": false
+        "image": ""
     },
     {
         "id": 11,
-        "image": "",
-        "alreadyPicked": false
+        "image": ""
     },
     {
         "id": 12,
-        "image": "",
-        "alreadyPicked": false
+        "image": ""
     }
 ]
