@@ -4,7 +4,7 @@ import "./Navbar.css";
 function Navbar(props) {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark text-white fixed-top">
-            <div className="col-1"></div>
+            <div className="col-0 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
             <div className="col-3">
                 <h1>Clicky Game</h1>
             </div>
