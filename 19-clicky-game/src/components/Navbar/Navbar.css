@@ -40,7 +40,7 @@
     }
   }
 
-  @media only screen and (min-width: 500px) {
+  @media only screen and (min-width: 798px) {
     .navbar h1 {
         font-size: 150%;
         font-weight: 650;

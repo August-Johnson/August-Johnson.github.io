@@ -27,6 +27,7 @@ class Game extends Component {
     // Every update (in this case, clicking a card), run the method that determines whether or not to update the highscore.
     componentDidUpdate() {
         this.highscoreCheck();
+        this.handleWinCondition();
     }
 
     // Method that shuffles the order in which the cards will render.
@@ -76,7 +77,7 @@ class Game extends Component {
     }
 
     // Method that handles when the user guesses correctly.
-    handleWinCondition = () => {
+    handleCorrectGuess = () => {
         // Incrementing the score by 1 and displaying a message (in green) to the user telling them they have guessed correctly.
         this.setState({
             score: this.state.score + 1,
@@ -84,6 +85,8 @@ class Game extends Component {
             messageColor: "#32CD32"
         });
     }
+
+    handleWinCondition = () => this.state.score === 12 ? this.setState({ message: "You Win! Click an image to play again!",  messageColor: "#FFFFFF", score: 0 }) : "";
 
     // Method that checks if the user's end score was higher than the current highscore and updates the state accordingly.
     highscoreCheck = () => this.state.score > this.state.highscore ? this.setState({ highscore: this.state.score }) : false
@@ -101,7 +104,7 @@ class Game extends Component {
                         {this.state.tempCardArrangement.map((card) =>
                             <Card key={card.id} id={card.id} image={card.image} cardArr={this.state.gameCards}
                                 shuffleCards={this.shuffleCards} handleLoseCondition={this.handleLoseCondition}
-                                handleWinCondition={this.handleWinCondition} />)}
+                                handleCorrectGuess={this.handleCorrectGuess} />)}
                     </Row>
                 </Container>
             </div >

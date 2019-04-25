@@ -17,7 +17,7 @@ class Card extends Component {
         }
         else {
             // If the card hasn't been clicked already, run the method that handles when the user guesses correctly and set the card's clicked state to true.
-            this.props.handleWinCondition();
+            this.props.handleCorrectGuess();
             this.setState({ clicked: true });
         }
         // Run the method that will shuffle the display order of the cards.
@@ -31,7 +31,7 @@ class Card extends Component {
 
     render() {
         return (
-            <div className="col-3">
+            <div className="col-4 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                 <div className="card" id={`card-${this.props.id}`} style={{ backgroundImage: `url(${this.props.image})`}} onClick={this.handleClick}>
                 </div >
 
