@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Crystal Collector!</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container instructions-box">
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron py-2">
+                    <h2 class="display-4">Here are the rules:</h2>
+
+                    <hr />
+
+                    <p>At the start of the game you'll be given a random number.</p>
+
+                    <p>There are four crystals below. Each one has a point value. That value is hidden from you. When
+                        you click on a crystal, the points are revealed and are added to your score.</p>
+
+                    <p>To win the game, your total score has to equal that of the random number. If your total score is
+                        higher than the random number, you lose the game.</p>
+
+                    <p>Note: Every time you start a new game, the values of the crystals change.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-7 col-md-7 col-sm-12">
+                <div class="jumbotron">
+                    <p class="lead">Match your score to this number: <span class="number-box ml-1"></span></p>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-5 col-md-5 col-sm-12">
+                <div class="card">
+                    <div class="card-header">Game results: <span class="game-results"></span></div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Wins: <span class="wins"></span></li>
+                        <li class="list-group-item">Losses: <span class="losses"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-12">
+                <div class="crystals">
+                    <img class="ruby crystal-image" data-crystal-value="0" src="assets/images/ruby-crystal.png" alt="crystal">
+                    <img class="diamond crystal-image" src="assets/images/diamond-crystal.jpg" alt="crystal">
+                    <img class="black-crystal crystal-image" src="assets/images/black-crystal.jpg" alt="crystal">
+                    <img class="orange-crystal crystal-image" src="assets/images/orange-crystal.png" alt="crystal">
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-12">
+                <div class="card bg-light mb-3">
+                    <div class="card-header">Your total score is:</div>
+                    <div class="card-body">
+                        <h5 class="card-title total-score"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="assets/javascript/game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+.navbar {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #5133a5;
+  }
+
+  .navbar h1 {
+      font-size: 100%;
+      font-weight: 650;
+  }
+
+  .navbar h2 {
+    font-size: 90%;
+    font-weight: 575;
+  }
+
+  .score-display {
+      font-size: 100%;
+      font-weight: 400;
+  }
+
+  .highscore-display {
+      color: rgb(0, 255, 0);
+  }
+
+  @media only screen and (min-width: 980px) {
+    .navbar h1 {
+        font-size: 270%;
+        font-weight: 650;
+    }
+  
+    .navbar h2 {
+      font-size: 225%;
+      font-weight: 575;
+    }
+  
+    .score-display {
+        font-size: 250%;
+        font-weight: 400;
+    }
+  }
+
+  @media only screen and (min-width: 798px) {
+    .navbar h1 {
+        font-size: 150%;
+        font-weight: 650;
+    }
+  
+    .navbar h2 {
+      font-size: 130%;
+      font-weight: 575;
+    }
+  
+    .score-display {
+        font-size: 150%;
+        font-weight: 400;
+    }
+  }
