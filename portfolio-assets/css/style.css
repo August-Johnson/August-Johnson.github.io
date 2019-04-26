@@ -28,7 +28,9 @@ h2 {
 }
 
 h4 {
-   padding: 10px;
+   padding: 10px 10px 5px 10px;
+   border-bottom: 2px solid #000000;
+   color: rgb(0, 128, 0);
 }
 
 h5 {
@@ -37,7 +39,7 @@ h5 {
 
 h6 {
     text-align: center;
-    text-decoration: underline;
+    border-bottom: 2px solid #000000;
     font-size: 115%;
 }
 
@@ -106,8 +108,9 @@ address img {
 .card-body {
     flex: 0;
     padding: 10px;
-    min-height: 70px;
-    max-height: 70px;
+    min-height: 85px;
+    max-height: 85px;
+    background-color: rgb(236, 202, 6);
 }
 
 .technologies-used {
